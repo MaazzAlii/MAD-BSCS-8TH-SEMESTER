@@ -1,0 +1,41 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Ali Khan",
+      "email": "ali@gmail.com",
+      "course": "BSCS"
+    },
+    {
+      "id": "2",
+      "name": "Ayesha Ahmed",
+      "email": "ayesha@domain.com",
+      "course": "Software Engineering"
+    },
+    {
+      "id": "3",
+      "name": "Bilal Ahmed",
+      "email": "bilal@domain.com",
+      "course": "Information Technology"
+    },
+    {
+      "id": "4",
+      "name": "Fatima Noor",
+      "email": "fatima@domain.com",
+      "course": "Artificial Intelligence"
+    },
+    {
+      "id": "5",
+      "name": "Zainab Malik",
+      "email": "zainab@domain.com",
+      "course": "Data Science"
+    },
+    {
+      "name": "saad",
+      "email": "Saad@gmailcom",
+      "course": "BSCS",
+      "id": "6"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

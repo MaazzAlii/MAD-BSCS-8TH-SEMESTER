@@ -1,0 +1,64 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Flutter/Dart/Pub related
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+/pubspec.lock
+*.dill
+*.pdb
+*.dll
+*.so
+**/ephemeral/
+**/windows/flutter/ephemeral/
+**/linux/flutter/ephemeral/
+
+
+# Android related
+**/android/.gradle
+**/android/local.properties
+**/android/**/gradle-wrapper.jar
+**/android/.project
+**/android/.classpath
+**/android/.settings/
+
+# iOS/macOS related
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/DerivedData/
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/profile
+**/ios/**/default.mode1v3
+**/ios/**/default.mode2v3
+**/ios/**/default.pbxuser
+**/ios/**/default.perspectivev3
+**/ios/**/xcuserdata/
+**/ios/**/Pods/
+**/ios/**/Podfile.lock

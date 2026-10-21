@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAD BSCS 8th Semester • Paper Quiz Topper Master Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0e17;
+      --bg-secondary: #131b2e;
+      --bg-card: #182238;
+      --bg-code: #0b1120;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #8b5cf6;
+      --accent-rose: #f43f5e;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --card-border: 1px solid rgba(255, 255, 255, 0.08);
+      --font-body: 'Outfit', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    /* Print / Paper Practice Mode */
+    body.paper-mode {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-code: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #cbd5e1;
+      --card-border: 1px solid #cbd5e1;
+      --accent-blue: #1d4ed8;
+      --accent-emerald: #047857;
+      --accent-amber: #b45309;
+      --accent-purple: #6d28d9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      padding-bottom: 80px;
+    }
+
+    /* Top Sticky Navigation */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    body.paper-mode .top-nav {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 2px solid #0f172a;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-badge {
+      font-size: 0.72rem;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    body.paper-mode .nav-links a:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-toggle-mode, .btn-print {
+      border: var(--card-border);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-toggle-mode:hover, .btn-print:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* Hero Header */
+    .hero {
+      text-align: center;
+      padding: 36px 20px 48px;
+      position: relative;
+    }
+
+    .hero-pretitle {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body.paper-mode .hero h1 {
+      background: none;
+      -webkit-text-fill-color: #0f172a;
+      color: #0f172a;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 24px;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      background: var(--bg-card);
+      border: var(--card-border);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Card System */
+    .section-card {
+      background: var(--bg-card);
+      border: var(--card-border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: border-color 0.2s ease;
+    }
+
+    body.paper-mode .section-card {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .topic-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .tag-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .tag-purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3); }
+    .tag-green { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .tag-amber { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+    /* Scenario Box */
+    .scenario-box {
+      background: rgba(6, 182, 212, 0.08);
+      border-left: 4px solid var(--accent-cyan);
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 24px;
+    }
+
+    .scenario-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .scenario-text {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--text-main);
+      font-style: italic;
+    }
+
+    /* Key Checklist Points */
+    .marks-checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .checklist-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: var(--card-border);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    body.paper-mode .checklist-item {
+      background: #f8fafc;
+    }
+
+    .checklist-icon {
+      color: var(--accent-emerald);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    /* Code Container */
+    .code-container {
+      background: var(--bg-code);
+      border: var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .code-header {
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: var(--card-border);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-lang {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-copy:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #fff;
+    }
+
+    pre {
+      padding: 20px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #e2e8f0;
+    }
+
+    body.paper-mode pre {
+      color: #0f172a;
+      background: #f8fafc;
+    }
+
+    /* Syntax Highlighting Tokens */
+    .kwd { color: #f472b6; font-weight: 600; } /* Keyword */
+    .cls { color: #38bdf8; font-weight: 600; } /* Class */
+    .fn  { color: #4ade80; } /* Function */
+    .str { color: #fde047; } /* String */
+    .num { color: #fb923c; } /* Number */
+    .com { color: #64748b; font-style: italic; } /* Comment */
+    .hl  { background: rgba(59, 130, 246, 0.18); padding: 2px 4px; border-radius: 4px; } /* Highlight */
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+      border: var(--card-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px 16px;
+      font-weight: 700;
+      border-bottom: var(--card-border);
+      color: var(--text-main);
+    }
+
+    body.paper-mode th {
+      background: #f1f5f9;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: var(--card-border);
+      color: var(--text-muted);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Practice Tracker */
+    .practice-box {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .practice-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .round-card {
+      background: var(--bg-card);
+      border: var(--card-border);
+      padding: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .round-card:hover {
+      border-color: var(--accent-blue);
+    }
+
+    .round-checkbox {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--accent-blue);
+      cursor: pointer;
+    }
+
+    .round-info h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .round-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Floating quick jump */
+    .quick-pill-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .quick-pill {
+      background: var(--bg-secondary);
+      border: var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .quick-pill:hover, .quick-pill.active {
+      color: #fff;
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .section-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <span class="topic-icon" style="width:32px; height:32px; font-size:1rem;">📱</span>
+      <span>MAD Quiz Topper</span>
+      <span class="nav-badge">BSCS 8th</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#universal">🧩 60% Repeat</a>
+      <a href="#stateful">⚡ StatefulWidget</a>
+      <a href="#provider">🔄 Provider</a>
+      <a href="#prefs">💾 SharedPreferences</a>
+      <a href="#sqflite">🗄️ SQFLite</a>
+      <a href="#cheatsheet">📋 Cheat Sheet</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-toggle-mode" onclick="togglePaperMode()" title="Switch between Dark Screen Mode & Clean Paper Mode">
+        📄 <span id="mode-text">Paper Mode</span>
+      </button>
+      <button class="btn-print" onclick="window.print()" title="Print full cheat sheet for exam practice">
+        🖨️ Print
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="hero">
+      <div class="hero-pretitle">University Exam Master Study Sheet</div>
+      <h1>Flutter Paper Quiz Solution Hub</h1>
+      <p>Memorize the <strong>Universal 60% Repeat Skeleton</strong>, then plug in the scenario-specific solution blocks. Guaranteed 100% full marks on written university paper tests.</p>
+      
+      <div class="quick-stats">
+        <div class="stat-pill">🎯 <strong>Exam Date:</strong> Tomorrow</div>
+        <div class="stat-pill">✍️ <strong>Format:</strong> Written on Paper</div>
+        <div class="stat-pill">📚 <strong>4 Core Topics:</strong> State + Local Persistence</div>
+      </div>
+    </section>
+
+    <!-- Quick Pill Nav -->
+    <div class="quick-pill-bar">
+      <a href="#universal" class="quick-pill">🧩 1. The Repeat Skeleton</a>
+      <a href="#stateful" class="quick-pill">⚡ 2. StatefulWidget</a>
+      <a href="#provider" class="quick-pill">🔄 3. Provider</a>
+      <a href="#prefs" class="quick-pill">💾 4. SharedPreferences</a>
+      <a href="#sqflite" class="quick-pill">🗄️ 5. SQFLite CRUD</a>
+      <a href="#practice" class="quick-pill">✍️ 6. Paper Practice</a>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 1: THE UNIVERSAL REPEAT SKELETON (60% COMMON CODE)     -->
+    <!-- ============================================================== -->
+    <article id="universal" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="topic-icon">🧩</div>
+          <div>
+            <h2 class="section-title">1. The Universal Repeat Pattern (60% Identical Code)</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Memorize this once. Write it on almost every Flutter UI question!</p>
+          </div>
+        </div>
+        <span class="tag-badge tag-blue">Golden Template</span>
+      </div>
+
+      <div class="scenario-box">
+        <div class="scenario-label">💡 The Professor's Grading Secret</div>
+        <div class="scenario-text">
+          On paper, 60% of every Flutter code is the identical boilerplate (`main()`, `runApp`, `MaterialApp`, `StatefulWidget`, `Scaffold`, `AppBar`, `Center`, `Column`). If you memorize this skeleton, you eliminate 60% of your exam anxiety!
+        </div>
+      </div>
+
+      <div class="marks-checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`void main() => runApp(...)`</strong> Entry point</div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`StatefulWidget` + `_State`</strong> Dual class structure</div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`Scaffold` + `AppBar`</strong> Standard layout canvas</div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">dart • Universal Shell (Paper Boilerplate)</span>
+          <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code><span class="kwd">import</span> <span class="str">'package:flutter/material.dart'</span>;
+
+<span class="com">// 1. Universal Entry Point</span>
+<span class="kwd">void</span> <span class="fn">main</span>() => <span class="fn">runApp</span>(<span class="kwd">const</span> <span class="cls">MyApp</span>());
+
+<span class="kwd">class</span> <span class="cls">MyApp</span> <span class="kwd">extends</span> <span class="cls">StatelessWidget</span> {
+  <span class="kwd">const</span> <span class="cls">MyApp</span>({<span class="kwd">super</span>.key});
+
+  <span class="kwd">@override</span>
+  <span class="cls">Widget</span> <span class="fn">build</span>(<span class="cls">BuildContext</span> context) {
+    <span class="kwd">return</span> <span class="kwd">const</span> <span class="cls">MaterialApp</span>(
+      home: <span class="cls">MyScreen</span>(),
+    );
+  }
+}
+
+<span class="com">// 2. Dual Class State Structure</span>
+<span class="kwd">class</span> <span class="cls">MyScreen</span> <span class="kwd">extends</span> <span class="cls">StatefulWidget</span> {
+  <span class="kwd">const</span> <span class="cls">MyScreen</span>({<span class="kwd">super</span>.key});
+
+  <span class="kwd">@override</span>
+  <span class="cls">State</span>&lt;<span class="cls">MyScreen</span>&gt; <span class="fn">createState</span>() => <span class="cls">_MyScreenState</span>();
+}
+
+<span class="kwd">class</span> <span class="cls">_MyScreenState</span> <span class="kwd">extends</span> <span class="cls">State</span>&lt;<span class="cls">MyScreen</span>&gt; {
+  <span class="com">// ⭐ ONLY THIS MIDDLE SECTION CHANGES BASED ON TOPIC:</span>
+  <span class="com">// - StatefulWidget: int counter; void _increment() { setState(() {...}); }</span>
+  <span class="com">// - SharedPreferences: SharedPreferences.getInstance(); prefs.setString();</span>
+  <span class="com">// - SQFLite: DatabaseHelper.instance.insertStudent(...);</span>
+
+  <span class="kwd">@override</span>
+  <span class="cls">Widget</span> <span class="fn">build</span>(<span class="cls">BuildContext</span> context) {
+    <span class="kwd">return</span> <span class="cls">Scaffold</span>(
+      appBar: <span class="cls">AppBar</span>(title: <span class="kwd">const</span> <span class="cls">Text</span>(<span class="str">'Exam Scenario Title'</span>)),
+      body: <span class="cls">Center</span>(
+        child: <span class="cls">Column</span>(
+          mainAxisAlignment: <span class="cls">MainAxisAlignment</span>.center,
+          children: [
+            <span class="com">// Display Widget here</span>
+          ],
+        ),
+      ),
+      floatingActionButton: <span class="cls">FloatingActionButton</span>(
+        onPressed: () {}, <span class="com">// Action trigger</span>
+        child: <span class="kwd">const</span> <span class="cls">Icon</span>(<span class="cls">Icons</span>.add),
+      ),
+    );
+  }
+}</code></pre>
+      </div>
+    </article>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 2: TOPIC 1 - STATEFULWIDGET (setState)                -->
+    <!-- ============================================================== -->
+    <article id="stateful" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="topic-icon" style="background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.3);">⚡</div>
+          <div>
+            <h2 class="section-title">2. State Management — StatefulWidget (`setState`)</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Ephemeral / Local Component State</p>
+          </div>
+        </div>
+        <span class="tag-badge tag-amber">Topic 1</span>
+      </div>
+
+      <div class="scenario-box" style="border-left-color: var(--accent-amber); background: rgba(245, 158, 11, 0.08);">
+        <div class="scenario-label" style="color: var(--accent-amber);">📝 Scenario Question Asked by Professor</div>
+        <div class="scenario-text">
+          "Develop a Flutter screen where a user clicks an increment/decrement button to update a counter or toggle status, and the screen re-renders immediately to reflect the updated value without reloading the application."
+        </div>
+      </div>
+
+      <div class="marks-checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div>State variable declared inside <code>_CounterScreenState</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`setState(() { _counter++; })`</strong> triggers the rebuild</div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div>Button connects directly to the method</div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">dart • Solution for StatefulWidget Scenario</span>
+          <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code><span class="kwd">import</span> <span class="str">'package:flutter/material.dart'</span>;
+
+<span class="kwd">void</span> <span class="fn">main</span>() => <span class="fn">runApp</span>(<span class="kwd">const</span> <span class="cls">MaterialApp</span>(home: <span class="cls">CounterScreen</span>()));
+
+<span class="kwd">class</span> <span class="cls">CounterScreen</span> <span class="kwd">extends</span> <span class="cls">StatefulWidget</span> {
+  <span class="kwd">const</span> <span class="cls">CounterScreen</span>({<span class="kwd">super</span>.key});
+
+  <span class="kwd">@override</span>
+  <span class="cls">State</span>&lt;<span class="cls">CounterScreen</span>&gt; <span class="fn">createState</span>() => <span class="cls">_CounterScreenState</span>();
+}
+
+<span class="kwd">class</span> <span class="cls">_CounterScreenState</span> <span class="kwd">extends</span> <span class="cls">State</span>&lt;<span class="cls">CounterScreen</span>&gt; {
+  <span class="com">// 1. State Variable</span>
+  <span class="kwd">int</span> _counter = <span class="num">0</span>;
+
+  <span class="com">// 2. Mutation Logic with setState()</span>
+  <span class="kwd">void</span> <span class="fn">_increment</span>() {
+    <span class="fn">setState</span>(() {
+      _counter++;
+    });
+  }
+
+  <span class="kwd">@override</span>
+  <span class="cls">Widget</span> <span class="fn">build</span>(<span class="cls">BuildContext</span> context) {
+    <span class="kwd">return</span> <span class="cls">Scaffold</span>(
+      appBar: <span class="cls">AppBar</span>(title: <span class="kwd">const</span> <span class="cls">Text</span>(<span class="str">'StatefulWidget Counter'</span>)),
+      body: <span class="cls">Center</span>(
+        child: <span class="cls">Text</span>(
+          <span class="str">'Count: $_counter'</span>,
+          style: <span class="kwd">const</span> <span class="cls">TextStyle</span>(fontSize: <span class="num">32</span>, fontWeight: <span class="cls">FontWeight</span>.bold),
+        ),
+      ),
+      floatingActionButton: <span class="cls">FloatingActionButton</span>(
+        onPressed: _increment,
+        child: <span class="kwd">const</span> <span class="cls">Icon</span>(<span class="cls">Icons</span>.add),
+      ),
+    );
+  }
+}</code></pre>
+      </div>
+    </article>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 3: TOPIC 2 - PROVIDER (ChangeNotifier)                -->
+    <!-- ============================================================== -->
+    <article id="provider" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="topic-icon" style="background:rgba(139,92,246,0.15); border-color:rgba(139,92,246,0.3);">🔄</div>
+          <div>
+            <h2 class="section-title">3. State Management — Provider (`ChangeNotifier`)</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem;">App-Wide Decoupled State Architecture</p>
+          </div>
+        </div>
+        <span class="tag-badge tag-purple">Topic 2</span>
+      </div>
+
+      <div class="scenario-box" style="border-left-color: var(--accent-purple); background: rgba(139, 92, 246, 0.08);">
+        <div class="scenario-label" style="color: var(--accent-purple);">📝 Scenario Question Asked by Professor</div>
+        <div class="scenario-text">
+          "A shopping cart or counter state must be shared across the entire app. To avoid rebuilding the entire screen and separate business logic from the UI, implement state management using the Provider package with `ChangeNotifier`, `ChangeNotifierProvider`, and `Consumer`."
+        </div>
+      </div>
+
+      <div class="marks-checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">1</span>
+          <div><strong>Step 1:</strong> Model class <code>extends ChangeNotifier</code> + calls <code>notifyListeners()</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">2</span>
+          <div><strong>Step 2:</strong> Wrap root widget inside <code>ChangeNotifierProvider(create: ...)</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">3</span>
+          <div><strong>Step 3:</strong> Read state with <code>Consumer&lt;T&gt;</code> and call with <code>Provider.of(..., listen:false)</code></div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">dart • Solution for Provider Scenario (3 Steps)</span>
+          <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code><span class="kwd">import</span> <span class="str">'package:flutter/material.dart'</span>;
+<span class="kwd">import</span> <span class="str">'package:provider/provider.dart'</span>;
+
+<span class="com">// ==============================================================</span>
+<span class="com">// STEP 1: Provider / Model Layer (extends ChangeNotifier)</span>
+<span class="com">// ==============================================================</span>
+<span class="kwd">class</span> <span class="cls">CounterProvider</span> <span class="kwd">extends</span> <span class="cls">ChangeNotifier</span> {
+  <span class="kwd">int</span> _count = <span class="num">0</span>;
+  <span class="kwd">int</span> <span class="kwd">get</span> count => _count;
+
+  <span class="kwd">void</span> <span class="fn">increment</span>() {
+    _count++;
+    <span class="fn">notifyListeners</span>(); <span class="com">// ⭐ Tells all Consumer widgets to rebuild</span>
+  }
+}
+
+<span class="com">// ==============================================================</span>
+<span class="com">// STEP 2: Wrap Application Root in main()</span>
+<span class="com">// ==============================================================</span>
+<span class="kwd">void</span> <span class="fn">main</span>() {
+  <span class="fn">runApp</span>(
+    <span class="cls">ChangeNotifierProvider</span>(
+      create: (context) => <span class="cls">CounterProvider</span>(),
+      child: <span class="kwd">const</span> <span class="cls">MaterialApp</span>(home: <span class="cls">ProviderScreen</span>()),
+    ),
+  );
+}
+
+<span class="com">// ==============================================================</span>
+<span class="com">// STEP 3: UI Layer (StatelessWidget + Consumer)</span>
+<span class="com">// ==============================================================</span>
+<span class="kwd">class</span> <span class="cls">ProviderScreen</span> <span class="kwd">extends</span> <span class="cls">StatelessWidget</span> {
+  <span class="kwd">const</span> <span class="cls">ProviderScreen</span>({<span class="kwd">super</span>.key});
+
+  <span class="kwd">@override</span>
+  <span class="cls">Widget</span> <span class="fn">build</span>(<span class="cls">BuildContext</span> context) {
+    <span class="kwd">return</span> <span class="cls">Scaffold</span>(
+      appBar: <span class="cls">AppBar</span>(title: <span class="kwd">const</span> <span class="cls">Text</span>(<span class="str">'Provider State'</span>)),
+      body: <span class="cls">Center</span>(
+        <span class="com">// Consumer rebuilds ONLY this specific Text child</span>
+        child: <span class="cls">Consumer</span>&lt;<span class="cls">CounterProvider</span>&gt;(
+          builder: (context, provider, child) {
+            <span class="kwd">return</span> <span class="cls">Text</span>(
+              <span class="str">'Count: ${provider.count}'</span>,
+              style: <span class="kwd">const</span> <span class="cls">TextStyle</span>(fontSize: <span class="num">32</span>, fontWeight: <span class="cls">FontWeight</span>.bold),
+            );
+          },
+        ),
+      ),
+      floatingActionButton: <span class="cls">FloatingActionButton</span>(
+        onPressed: () {
+          <span class="cls">Provider</span>.of&lt;<span class="cls">CounterProvider</span>&gt;(context, listen: <span class="kwd">false</span>).increment();
+        },
+        child: <span class="kwd">const</span> <span class="cls">Icon</span>(<span class="cls">Icons</span>.add),
+      ),
+    );
+  }
+}</code></pre>
+      </div>
+
+      <!-- Theory Bonus Table -->
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Comparison Factor</th>
+              <th>setState (StatefulWidget)</th>
+              <th>Provider (ChangeNotifier)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Scope</strong></td>
+              <td>Local / Ephemeral (Single Screen)</td>
+              <td>Global / App-wide (Multi-Screen)</td>
+            </tr>
+            <tr>
+              <td><strong>Rebuild Behavior</strong></td>
+              <td>Rebuilds entire <code>build()</code> method</td>
+              <td>Rebuilds only the subscribed <code>Consumer</code></td>
+            </tr>
+            <tr>
+              <td><strong>Architecture</strong></td>
+              <td>Couples UI with state logic</td>
+              <td>Decouples Business Logic from Presentation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 4: TOPIC 3 - SHAREDPREFERENCES                        -->
+    <!-- ============================================================== -->
+    <article id="prefs" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="topic-icon" style="background:rgba(16,185,129,0.15); border-color:rgba(16,185,129,0.3);">💾</div>
+          <div>
+            <h2 class="section-title">4. Local Data Persistence — SharedPreferences</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Key-Value Persistent Disk Storage</p>
+          </div>
+        </div>
+        <span class="tag-badge tag-green">Topic 3</span>
+      </div>
+
+      <div class="scenario-box" style="border-left-color: var(--accent-emerald); background: rgba(16, 185, 129, 0.08);">
+        <div class="scenario-label" style="color: var(--accent-emerald);">📝 Scenario Question Asked by Professor</div>
+        <div class="scenario-text">
+          "Create a User Login Session / Profile screen with 'Remember Me' or local username storage. When the user enters their name and hits Save, store it locally using SharedPreferences. When the application restarts, automatically restore and display the saved name. Provide a Clear / Logout button."
+        </div>
+      </div>
+
+      <div class="marks-checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`SharedPreferences.getInstance()`</strong> is asynchronous (needs <code>await</code>)</div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`prefs.setString('key', val)`</strong> writes to disk</div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`prefs.getString('key') ?? default`</strong> reads safely</div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`prefs.remove('key')`</strong> clears the session</div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">dart • Solution for SharedPreferences Session Scenario</span>
+          <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code><span class="kwd">import</span> <span class="str">'package:flutter/material.dart'</span>;
+<span class="kwd">import</span> <span class="str">'package:shared_preferences/shared_preferences.dart'</span>;
+
+<span class="kwd">void</span> <span class="fn">main</span>() => <span class="fn">runApp</span>(<span class="kwd">const</span> <span class="cls">MaterialApp</span>(home: <span class="cls">LoginSessionScreen</span>()));
+
+<span class="kwd">class</span> <span class="cls">LoginSessionScreen</span> <span class="kwd">extends</span> <span class="cls">StatefulWidget</span> {
+  <span class="kwd">const</span> <span class="cls">LoginSessionScreen</span>({<span class="kwd">super</span>.key});
+
+  <span class="kwd">@override</span>
+  <span class="cls">State</span>&lt;<span class="cls">LoginSessionScreen</span>&gt; <span class="fn">createState</span>() => <span class="cls">_LoginSessionScreenState</span>();
+}
+
+<span class="kwd">class</span> <span class="cls">_LoginSessionScreenState</span> <span class="kwd">extends</span> <span class="cls">State</span>&lt;<span class="cls">LoginSessionScreen</span>&gt; {
+  <span class="kwd">final</span> <span class="cls">TextEditingController</span> _nameController = <span class="cls">TextEditingController</span>();
+  <span class="cls">String</span> _savedName = <span class="str">'No user logged in'</span>;
+
+  <span class="kwd">@override</span>
+  <span class="kwd">void</span> <span class="fn">initState</span>() {
+    <span class="kwd">super</span>.initState();
+    <span class="fn">_loadData</span>(); <span class="com">// Load saved preference on startup</span>
+  }
+
+  <span class="com">// 1. READ DATA (Async)</span>
+  <span class="cls">Future</span>&lt;<span class="kwd">void</span>&gt; <span class="fn">_loadData</span>() <span class="kwd">async</span> {
+    <span class="kwd">final</span> prefs = <span class="kwd">await</span> <span class="cls">SharedPreferences</span>.<span class="fn">getInstance</span>();
+    <span class="fn">setState</span>(() {
+      _savedName = prefs.<span class="fn">getString</span>(<span class="str">'username'</span>) ?? <span class="str">'No user logged in'</span>;
+    });
+  }
+
+  <span class="com">// 2. WRITE DATA (Async)</span>
+  <span class="cls">Future</span>&lt;<span class="kwd">void</span>&gt; <span class="fn">_saveData</span>() <span class="kwd">async</span> {
+    <span class="kwd">final</span> prefs = <span class="kwd">await</span> <span class="cls">SharedPreferences</span>.<span class="fn">getInstance</span>();
+    <span class="kwd">await</span> prefs.<span class="fn">setString</span>(<span class="str">'username'</span>, _nameController.text);
+    <span class="fn">_loadData</span>(); <span class="com">// Refresh UI</span>
+  }
+
+  <span class="com">// 3. CLEAR DATA (Logout)</span>
+  <span class="cls">Future</span>&lt;<span class="kwd">void</span>&gt; <span class="fn">_clearData</span>() <span class="kwd">async</span> {
+    <span class="kwd">final</span> prefs = <span class="kwd">await</span> <span class="cls">SharedPreferences</span>.<span class="fn">getInstance</span>();
+    <span class="kwd">await</span> prefs.<span class="fn">remove</span>(<span class="str">'username'</span>);
+    <span class="fn">_loadData</span>(); <span class="com">// Refresh UI</span>
+  }
+
+  <span class="kwd">@override</span>
+  <span class="cls">Widget</span> <span class="fn">build</span>(<span class="cls">BuildContext</span> context) {
+    <span class="kwd">return</span> <span class="cls">Scaffold</span>(
+      appBar: <span class="cls">AppBar</span>(title: <span class="kwd">const</span> <span class="cls">Text</span>(<span class="str">'SharedPreferences Session'</span>)),
+      body: <span class="cls">Padding</span>(
+        padding: <span class="kwd">const</span> <span class="cls">EdgeInsets</span>.all(<span class="num">16.0</span>),
+        child: <span class="cls">Column</span>(
+          children: [
+            <span class="cls">TextField</span>(
+              controller: _nameController,
+              decoration: <span class="kwd">const</span> <span class="cls">InputDecoration</span>(labelText: <span class="str">'Enter Username'</span>),
+            ),
+            <span class="kwd">const</span> <span class="cls">SizedBox</span>(height: <span class="num">12</span>),
+            <span class="cls">Row</span>(
+              mainAxisAlignment: <span class="cls">MainAxisAlignment</span>.spaceEvenly,
+              children: [
+                <span class="cls">ElevatedButton</span>(onPressed: _saveData, child: <span class="kwd">const</span> <span class="cls">Text</span>(<span class="str">'Save / Login'</span>)),
+                <span class="cls">ElevatedButton</span>(onPressed: _clearData, child: <span class="kwd">const</span> <span class="cls">Text</span>(<span class="str">'Clear / Logout'</span>)),
+              ],
+            ),
+            <span class="kwd">const</span> <span class="cls">SizedBox</span>(height: <span class="num">20</span>),
+            <span class="cls">Text</span>(<span class="str">'Saved User: $_savedName'</span>, style: <span class="kwd">const</span> <span class="cls">TextStyle</span>(fontSize: <span class="num">18</span>)),
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+      </div>
+    </article>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 5: TOPIC 4 - SQFLITE CRUD HELPER                       -->
+    <!-- ============================================================== -->
+    <article id="sqflite" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="topic-icon" style="background:rgba(6,182,212,0.15); border-color:rgba(6,182,212,0.3);">🗄️</div>
+          <div>
+            <h2 class="section-title">5. Local Relational Database — SQFLite (Full CRUD)</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Relational SQLite Database with Singleton Pattern</p>
+          </div>
+        </div>
+        <span class="tag-badge tag-blue">Topic 4</span>
+      </div>
+
+      <div class="scenario-box">
+        <div class="scenario-label">📝 Scenario Question Asked by Professor</div>
+        <div class="scenario-text">
+          "Write a complete Flutter DatabaseHelper class using SQFLite for a Student entity (id, name, rollNo). Implement the four CRUD operations: Create (Insert), Read (Query All), Update, and Delete. Show how to initialize and invoke it."
+        </div>
+      </div>
+
+      <div class="marks-checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>Singleton instance:</strong> <code>DatabaseHelper._init()</code> & <code>static Database? _database;</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>`openDatabase`</strong> with path & <code>onCreate: _createDB</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>[C] Insert:</strong> <code>db.insert('students', row)</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>[R] Read:</strong> <code>db.query('students')</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>[U] Update:</strong> <code>db.update(..., where: 'id = ?', whereArgs: [id])</code></div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✔</span>
+          <div><strong>[D] Delete:</strong> <code>db.delete(..., where: 'id = ?', whereArgs: [id])</code></div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">dart • Standard DatabaseHelper Class (Paper Exam Champion)</span>
+          <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code><span class="kwd">import</span> <span class="str">'package:sqflite/sqflite.dart'</span>;
+<span class="kwd">import</span> <span class="str">'package:path/path.dart'</span>;
+
+<span class="kwd">class</span> <span class="cls">DatabaseHelper</span> {
+  <span class="com">// 1. Singleton pattern</span>
+  <span class="kwd">static final</span> <span class="cls">DatabaseHelper</span> instance = <span class="cls">DatabaseHelper</span>.<span class="fn">_init</span>();
+  <span class="kwd">static</span> <span class="cls">Database</span>? _database;
+
+  <span class="cls">DatabaseHelper</span>.<span class="fn">_init</span>();
+
+  <span class="cls">Future</span>&lt;<span class="cls">Database</span>&gt; <span class="kwd">get</span> database <span class="kwd">async</span> {
+    <span class="kwd">if</span> (_database != <span class="kwd">null</span>) <span class="kwd">return</span> _database!;
+    _database = <span class="kwd">await</span> <span class="fn">_initDB</span>(<span class="str">'student.db'</span>);
+    <span class="kwd">return</span> _database!;
+  }
+
+  <span class="com">// 2. Open / Create Database File</span>
+  <span class="cls">Future</span>&lt;<span class="cls">Database</span>&gt; <span class="fn">_initDB</span>(<span class="cls">String</span> filePath) <span class="kwd">async</span> {
+    <span class="kwd">final</span> dbPath = <span class="kwd">await</span> <span class="fn">getDatabasesPath</span>();
+    <span class="kwd">final</span> path = <span class="fn">join</span>(dbPath, filePath);
+
+    <span class="kwd">return await</span> <span class="fn">openDatabase</span>(
+      path,
+      version: <span class="num">1</span>,
+      onCreate: _createDB,
+    );
+  }
+
+  <span class="com">// 3. Create Table SQL</span>
+  <span class="cls">Future</span> <span class="fn">_createDB</span>(<span class="cls">Database</span> db, <span class="kwd">int</span> version) <span class="kwd">async</span> {
+    <span class="kwd">await</span> db.<span class="fn">execute</span>(<span class="str">'''
+      CREATE TABLE students (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        rollNo TEXT NOT NULL
+      )
+    '''</span>);
+  }
+
+  <span class="com">// ==============================================================</span>
+  <span class="com">// 4. CRUD OPERATIONS (The Core Answer on Paper!)</span>
+  <span class="com">// ==============================================================</span>
+
+  <span class="com">// [C] CREATE / INSERT</span>
+  <span class="cls">Future</span>&lt;<span class="kwd">int</span>&gt; <span class="fn">insertStudent</span>(<span class="cls">Map</span>&lt;<span class="cls">String</span>, <span class="kwd">dynamic</span>&gt; row) <span class="kwd">async</span> {
+    <span class="kwd">final</span> db = <span class="kwd">await</span> database;
+    <span class="kwd">return await</span> db.<span class="fn">insert</span>(<span class="str">'students'</span>, row);
+  }
+
+  <span class="com">// [R] READ / QUERY ALL</span>
+  <span class="cls">Future</span>&lt;<span class="cls">List</span>&lt;<span class="cls">Map</span>&lt;<span class="cls">String</span>, <span class="kwd">dynamic</span>&gt;&gt;&gt; <span class="fn">queryAllStudents</span>() <span class="kwd">async</span> {
+    <span class="kwd">final</span> db = <span class="kwd">await</span> database;
+    <span class="kwd">return await</span> db.<span class="fn">query</span>(<span class="str">'students'</span>);
+  }
+
+  <span class="com">// [U] UPDATE</span>
+  <span class="cls">Future</span>&lt;<span class="kwd">int</span>&gt; <span class="fn">updateStudent</span>(<span class="cls">Map</span>&lt;<span class="cls">String</span>, <span class="kwd">dynamic</span>&gt; row) <span class="kwd">async</span> {
+    <span class="kwd">final</span> db = <span class="kwd">await</span> database;
+    <span class="kwd">int</span> id = row[<span class="str">'id'</span>];
+    <span class="kwd">return await</span> db.<span class="fn">update</span>(<span class="str">'students'</span>, row, where: <span class="str">'id = ?'</span>, whereArgs: [id]);
+  }
+
+  <span class="com">// [D] DELETE</span>
+  <span class="cls">Future</span>&lt;<span class="kwd">int</span>&gt; <span class="fn">deleteStudent</span>(<span class="kwd">int</span> id) <span class="kwd">async</span> {
+    <span class="kwd">final</span> db = <span class="kwd">await</span> database;
+    <span class="kwd">return await</span> db.<span class="fn">delete</span>(<span class="str">'students'</span>, where: <span class="str">'id = ?'</span>, whereArgs: [id]);
+  }
+}</code></pre>
+      </div>
+
+      <!-- Quick UI Invocation Snippet -->
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">dart • How to Call CRUD from Flutter UI</span>
+          <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code><span class="com">// 1. Insert record</span>
+<span class="kwd">await</span> <span class="cls">DatabaseHelper</span>.instance.<span class="fn">insertStudent</span>({
+  <span class="str">'name'</span>: <span class="str">'Maaz Ali'</span>,
+  <span class="str">'rollNo'</span>: <span class="str">'3143'</span>,
+});
+
+<span class="com">// 2. Query all records</span>
+<span class="cls">List</span>&lt;<span class="cls">Map</span>&lt;<span class="cls">String</span>, <span class="kwd">dynamic</span>&gt;&gt; students = <span class="kwd">await</span> <span class="cls">DatabaseHelper</span>.instance.<span class="fn">queryAllStudents</span>();
+
+<span class="com">// 3. Delete by ID</span>
+<span class="kwd">await</span> <span class="cls">DatabaseHelper</span>.instance.<span class="fn">deleteStudent</span>(<span class="num">1</span>);</code></pre>
+      </div>
+    </article>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 6: RAPID CHEAT SHEET                                   -->
+    <!-- ============================================================== -->
+    <article id="cheatsheet" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="topic-icon">📋</div>
+          <div>
+            <h2 class="section-title">6. Exam Hall Rapid Recall Formula Table</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Review these 10 one-liners before walking into the examination room</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Golden Line of Code</th>
+              <th>Purpose & Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>StatefulWidget</strong></td>
+              <td><code>setState(() { count++; });</code></td>
+              <td>Signals Flutter framework to call <code>build()</code> and redraw UI</td>
+            </tr>
+            <tr>
+              <td><strong>Provider (Model)</strong></td>
+              <td><code>notifyListeners();</code></td>
+              <td>Broadcasts state mutation to listening <code>Consumer</code> widgets</td>
+            </tr>
+            <tr>
+              <td><strong>Provider (Root)</strong></td>
+              <td><code>ChangeNotifierProvider(create: (_) => Model())</code></td>
+              <td>Injects provider into widget tree at app entry point</td>
+            </tr>
+            <tr>
+              <td><strong>Provider (UI)</strong></td>
+              <td><code>Consumer&lt;T&gt;(builder: (ctx, model, child) => ...)</code></td>
+              <td>Rebuilds ONLY the wrapped widget subtree when notified</td>
+            </tr>
+            <tr>
+              <td><strong>Provider (Action)</strong></td>
+              <td><code>Provider.of&lt;T&gt;(context, listen: false).action();</code></td>
+              <td>Executes state logic without subscribing to rebuilds</td>
+            </tr>
+            <tr>
+              <td><strong>SharedPreferences</strong></td>
+              <td><code>final prefs = await SharedPreferences.getInstance();</code></td>
+              <td>Connects to platform persistent key-value disk store</td>
+            </tr>
+            <tr>
+              <td><strong>SharedPreferences</strong></td>
+              <td><code>await prefs.setString('key', 'val');</code></td>
+              <td>Persists primitive string to disk asynchronously</td>
+            </tr>
+            <tr>
+              <td><strong>SharedPreferences</strong></td>
+              <td><code>prefs.getString('key') ?? 'default';</code></td>
+              <td>Reads string from disk with fallback safe default</td>
+            </tr>
+            <tr>
+              <td><strong>SQFLite</strong></td>
+              <td><code>openDatabase(path, version: 1, onCreate: ...);</code></td>
+              <td>Opens or creates the SQLite database file on disk</td>
+            </tr>
+            <tr>
+              <td><strong>SQFLite</strong></td>
+              <td><code>db.insert('students', map);</code></td>
+              <td>Inserts row and returns generated integer ID</td>
+            </tr>
+            <tr>
+              <td><strong>SQFLite</strong></td>
+              <td><code>db.query('students');</code></td>
+              <td>Fetches all rows as <code>List&lt;Map&lt;String, dynamic&gt;&gt;</code></td>
+            </tr>
+            <tr>
+              <td><strong>SQFLite</strong></td>
+              <td><code>db.delete('students', where: 'id = ?', whereArgs: [id]);</code></td>
+              <td>Safely deletes row matching ID with parameterized SQL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- ============================================================== -->
+    <!-- SECTION 7: 4-TIMES PAPER PRACTICE CHECKLIST                    -->
+    <!-- ============================================================== -->
+    <section id="practice" class="practice-box">
+      <div class="practice-title">
+        <span>✍️</span> 4-Times Paper Writing Muscle Memory Tracker
+      </div>
+      <p style="color:var(--text-muted); font-size:0.95rem;">
+        To become the topper student, write these 4 topics down on physical paper 4 to 5 times. Click each card when you complete a writing round:
+      </p>
+
+      <div class="practice-grid">
+        <label class="round-card" onclick="toggleRound(this)">
+          <input type="checkbox" class="round-checkbox">
+          <div class="round-info">
+            <h4>Round 1: Look & Copy</h4>
+            <p>Write all 4 topics on paper while reading line by line.</p>
+          </div>
+        </label>
+
+        <label class="round-card" onclick="toggleRound(this)">
+          <input type="checkbox" class="round-checkbox">
+          <div class="round-info">
+            <h4>Round 2: Semi-Recall</h4>
+            <p>Write from memory; look only when stuck on a method name.</p>
+          </div>
+        </label>
+
+        <label class="round-card" onclick="toggleRound(this)">
+          <input type="checkbox" class="round-checkbox">
+          <div class="round-info">
+            <h4>Round 3: Pure Paper Exam</h4>
+            <p>Write all 4 topics on blank sheet. Mark mistakes in red.</p>
+          </div>
+        </label>
+
+        <label class="round-card" onclick="toggleRound(this)">
+          <input type="checkbox" class="round-checkbox">
+          <div class="round-info">
+            <h4>Round 4: 15-Min Speed Run</h4>
+            <p>Time yourself 15 minutes. Write fast with zero errors!</p>
+          </div>
+        </label>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Copy code button handler
+    function copyCode(button) {
+      const pre = button.closest('.code-container').querySelector('pre');
+      const text = pre.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Copied!';
+        button.style.backgroundColor = 'var(--accent-emerald)';
+        button.style.color = '#ffffff';
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.style.backgroundColor = '';
+          button.style.color = '';
+        }, 2000);
+      });
+    }
+
+    // Toggle Paper Mode (High contrast black & white for printing/writing)
+    function togglePaperMode() {
+      const body = document.body;
+      const isPaper = body.classList.toggle('paper-mode');
+      const modeText = document.getElementById('mode-text');
+      if (isPaper) {
+        modeText.innerText = 'Dark Mode';
+      } else {
+        modeText.innerText = 'Paper Mode';
+      }
+    }
+
+    // Interactive checklist card toggle
+    function toggleRound(card) {
+      const cb = card.querySelector('.round-checkbox');
+      setTimeout(() => {
+        if (cb.checked) {
+          card.style.borderColor = 'var(--accent-emerald)';
+          card.style.background = 'rgba(16, 185, 129, 0.12)';
+        } else {
+          card.style.borderColor = '';
+          card.style.background = '';
+        }
+      }, 50);
+    }
+  </script>
+</body>
+</html>

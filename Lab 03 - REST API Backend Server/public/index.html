@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex University • Student Management & Enrollment Portal</title>
+  <meta name="description" content="Modern University Student Portal with JSON-Server REST API CRUD operations (Create, Read, Update, Delete)">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark">
+  <!-- Background Glow Orbs -->
+  <div class="bg-glow orb-1"></div>
+  <div class="bg-glow orb-2"></div>
+  <div class="bg-glow orb-3"></div>
+
+  <!-- Main Container -->
+  <div class="app-wrapper">
+    <!-- Top Navigation Bar -->
+    <header class="navbar glass-card">
+      <div class="nav-brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">
+            <span>APEX</span> UNIVERSITY
+            <span class="badge-pill pulse-badge"><span class="pulse-dot"></span> JSON-SERVER LIVE</span>
+          </div>
+          <span class="brand-sub">Student Information & Application Management Portal</span>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button id="btn-api-inspector" class="btn btn-glass" title="View Live API Requests">
+          <i class="fa-solid fa-network-wired"></i>
+          <span>API Inspector</span>
+          <span id="api-counter" class="counter-badge">0</span>
+        </button>
+
+        <button id="btn-export-data" class="btn btn-glass" title="Export Records to JSON/CSV">
+          <i class="fa-solid fa-file-export"></i>
+          <span>Export</span>
+        </button>
+
+        <button id="btn-seed-data" class="btn btn-glass" title="Reset / Reload Sample Data">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>Reset DB</span>
+        </button>
+
+        <div class="theme-picker">
+          <button id="theme-toggle-btn" class="btn btn-icon btn-glass" title="Change Theme">
+            <i class="fa-solid fa-palette"></i>
+          </button>
+          <div class="theme-dropdown" id="theme-menu">
+            <div class="theme-option active" data-set-theme="dark"><i class="fa-solid fa-moon"></i> Cyber Dark</div>
+            <div class="theme-option" data-set-theme="midnight"><i class="fa-solid fa-gem"></i> Deep Midnight</div>
+            <div class="theme-option" data-set-theme="emerald"><i class="fa-solid fa-leaf"></i> Aurora Green</div>
+            <div class="theme-option" data-set-theme="light"><i class="fa-solid fa-sun"></i> Pure Light</div>
+          </div>
+        </div>
+
+        <button id="btn-open-create-modal" class="btn btn-primary glow-btn">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Register Student</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Metrics Dashboard -->
+    <section class="metrics-grid">
+      <div class="metric-card glass-card">
+        <div class="metric-icon icon-blue">
+          <i class="fa-solid fa-users-viewfinder"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Total Registered</span>
+          <h3 class="metric-val" id="metric-total">0</h3>
+          <span class="metric-trend text-blue"><i class="fa-solid fa-server"></i> In Database</span>
+        </div>
+      </div>
+
+      <div class="metric-card glass-card">
+        <div class="metric-icon icon-green">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Active Enrolled</span>
+          <h3 class="metric-val" id="metric-enrolled">0</h3>
+          <span class="metric-trend text-green"><i class="fa-solid fa-circle-check"></i> Verified Status</span>
+        </div>
+      </div>
+
+      <div class="metric-card glass-card">
+        <div class="metric-icon icon-purple">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Average GPA</span>
+          <h3 class="metric-val" id="metric-gpa">0.00</h3>
+          <span class="metric-trend text-purple"><i class="fa-solid fa-chart-line"></i> Academic Score</span>
+        </div>
+      </div>
+
+      <div class="metric-card glass-card">
+        <div class="metric-icon icon-amber">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Departments</span>
+          <h3 class="metric-val" id="metric-departments">6</h3>
+          <span class="metric-trend text-amber" id="metric-top-dept">Computing & AI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Layout: Form & Student List -->
+    <main class="portal-main-layout">
+      <!-- Left Column: Quick Form (Create/Edit) -->
+      <aside class="form-sidebar glass-card" id="form-container">
+        <div class="form-header">
+          <div class="form-header-title">
+            <i class="fa-solid fa-id-card-clip" id="form-icon"></i>
+            <h2 id="form-title">Student Registration</h2>
+          </div>
+          <span id="form-mode-badge" class="mode-badge create-mode">CREATE (POST)</span>
+        </div>
+        <p class="form-desc" id="form-subtitle">Fill in the student details to create a new record in JSON-Server.</p>
+
+        <form id="student-form" novalidate>
+          <input type="hidden" id="student-id-field" value="">
+
+          <!-- Avatar Selection Section -->
+          <div class="avatar-picker-group">
+            <div class="avatar-preview-container">
+              <img id="avatar-preview-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Student Avatar">
+              <div class="avatar-badge"><i class="fa-solid fa-camera"></i></div>
+            </div>
+            <div class="avatar-selector-controls">
+              <label class="input-label">Select Avatar or Custom URL</label>
+              <div class="preset-avatars">
+                <button type="button" class="preset-btn active" data-avatar="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar 1">
+                </button>
+                <button type="button" class="preset-btn" data-avatar="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Avatar 2">
+                </button>
+                <button type="button" class="preset-btn" data-avatar="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Avatar 3">
+                </button>
+                <button type="button" class="preset-btn" data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Avatar 4">
+                </button>
+                <button type="button" class="preset-btn" data-avatar="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80" alt="Avatar 5">
+                </button>
+              </div>
+              <input type="url" id="student-avatar-url" class="form-input input-sm" placeholder="Or enter image URL...">
+            </div>
+          </div>
+
+          <!-- Form Fields Grid -->
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="student-name" class="input-label">Full Name <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user input-icon"></i>
+                <input type="text" id="student-name" class="form-input" placeholder="e.g. Alexander Vance" required>
+              </div>
+              <span class="field-error" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="student-code" class="input-label">Student ID <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-hashtag input-icon"></i>
+                <input type="text" id="student-code" class="form-input" placeholder="e.g. U2024-CS501" required>
+                <button type="button" id="btn-gen-id" class="input-inner-btn" title="Generate Random ID">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+              </div>
+              <span class="field-error" id="code-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="student-email" class="input-label">University Email <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope input-icon"></i>
+                <input type="email" id="student-email" class="form-input" placeholder="name@apexuni.edu" required>
+              </div>
+              <span class="field-error" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="student-dept" class="input-label">Department / Major <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-building-columns input-icon"></i>
+                <select id="student-dept" class="form-input" required>
+                  <option value="" disabled selected>Select Department</option>
+                  <option value="Computer Science & AI">Computer Science & AI</option>
+                  <option value="Electrical & Robotics Engineering">Electrical & Robotics Engineering</option>
+                  <option value="Biomedical & Life Sciences">Biomedical & Life Sciences</option>
+                  <option value="Data Science & Quantum Computing">Data Science & Quantum Computing</option>
+                  <option value="Digital Design & Human Computer Interaction">Digital Design & HCI</option>
+                  <option value="Business & Financial Analytics">Business & Financial Analytics</option>
+                </select>
+              </div>
+              <span class="field-error" id="dept-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="student-degree" class="input-label">Degree Program <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-certificate input-icon"></i>
+                <input type="text" id="student-degree" class="form-input" placeholder="e.g. B.S. Computer Science" required>
+              </div>
+              <span class="field-error" id="degree-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="student-year" class="input-label">Academic Standing <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-layer-group input-icon"></i>
+                <select id="student-year" class="form-input" required>
+                  <option value="Freshman">Freshman (1st Year)</option>
+                  <option value="Sophomore">Sophomore (2nd Year)</option>
+                  <option value="Junior" selected>Junior (3rd Year)</option>
+                  <option value="Senior">Senior (4th Year)</option>
+                  <option value="Graduate">Graduate (Master/PhD)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="student-status" class="input-label">Enrollment Status <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-shield-halved input-icon"></i>
+                <select id="student-status" class="form-input" required>
+                  <option value="Enrolled" selected>Enrolled (Active)</option>
+                  <option value="Pending">Pending Review</option>
+                  <option value="Suspended">Suspended</option>
+                  <option value="Graduated">Graduated</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- GPA Slider + Number input -->
+            <div class="form-group full-width">
+              <div class="gpa-label-row">
+                <label for="student-gpa" class="input-label">Cumulative GPA (0.00 - 4.00)</label>
+                <span class="gpa-live-badge" id="gpa-display-badge">3.80</span>
+              </div>
+              <div class="gpa-slider-wrapper">
+                <input type="range" id="student-gpa-range" min="0.00" max="4.00" step="0.01" value="3.80" class="range-slider">
+                <input type="number" id="student-gpa" min="0.00" max="4.00" step="0.01" value="3.80" class="form-input gpa-num-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="student-phone" class="input-label">Phone Number</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-phone input-icon"></i>
+                <input type="tel" id="student-phone" class="form-input" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="student-semester" class="input-label">Admission Term</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-calendar-days input-icon"></i>
+                <input type="text" id="student-semester" class="form-input" value="Fall 2024" placeholder="e.g. Fall 2024">
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="student-address" class="input-label">Campus / Residential Address</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-location-dot input-icon"></i>
+                <input type="text" id="student-address" class="form-input" placeholder="e.g. 102 University Hall, Campus North">
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button type="submit" id="btn-submit-form" class="btn btn-primary full-width glow-btn">
+              <i class="fa-solid fa-floppy-disk"></i>
+              <span id="submit-btn-text">Submit Registration (POST)</span>
+            </button>
+            <button type="button" id="btn-cancel-edit" class="btn btn-glass full-width hidden">
+              <i class="fa-solid fa-xmark"></i>
+              <span>Cancel Edit</span>
+            </button>
+          </div>
+        </form>
+      </aside>
+
+      <!-- Right Column: Live Student Directory (CRUD Data View) -->
+      <section class="records-container glass-card">
+        <!-- Control Bar: Search, Filters, View Modes -->
+        <div class="records-header">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="Search by name, ID, major, or email...">
+            <button id="search-clear-btn" class="search-clear hidden" title="Clear Search"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+
+          <div class="filter-controls">
+            <!-- Department Dropdown Filter -->
+            <select id="filter-dept" class="filter-select">
+              <option value="ALL">All Departments</option>
+              <option value="Computer Science & AI">Computer Science & AI</option>
+              <option value="Electrical & Robotics Engineering">Robotics & EE</option>
+              <option value="Biomedical & Life Sciences">Biomedical</option>
+              <option value="Data Science & Quantum Computing">Data Science</option>
+              <option value="Digital Design & Human Computer Interaction">Design & HCI</option>
+              <option value="Business & Financial Analytics">Business Analytics</option>
+            </select>
+
+            <!-- Status Dropdown Filter -->
+            <select id="filter-status" class="filter-select">
+              <option value="ALL">All Statuses</option>
+              <option value="Enrolled">Enrolled</option>
+              <option value="Pending">Pending</option>
+              <option value="Suspended">Suspended</option>
+              <option value="Graduated">Graduated</option>
+            </select>
+
+            <!-- Sort Selector -->
+            <select id="sort-by" class="filter-select">
+              <option value="id-desc">Newest First</option>
+              <option value="id-asc">Oldest First</option>
+              <option value="gpa-desc">Highest GPA</option>
+              <option value="gpa-asc">Lowest GPA</option>
+              <option value="name-asc">Name (A-Z)</option>
+              <option value="name-desc">Name (Z-A)</option>
+            </select>
+
+            <!-- View Toggle: Table vs Cards -->
+            <div class="view-toggle-group">
+              <button id="view-table-btn" class="view-btn active" title="Table View">
+                <i class="fa-solid fa-list"></i>
+              </button>
+              <button id="view-cards-btn" class="view-btn" title="Card Grid View">
+                <i class="fa-solid fa-grip"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department Quick Pills -->
+        <div class="dept-pills-bar" id="dept-pills-container">
+          <button class="dept-pill active" data-dept="ALL">All Students (<span id="pill-count-all">0</span>)</button>
+          <button class="dept-pill" data-dept="Computer Science & AI">Computer Science & AI</button>
+          <button class="dept-pill" data-dept="Electrical & Robotics Engineering">Robotics & EE</button>
+          <button class="dept-pill" data-dept="Biomedical & Life Sciences">Biomedical</button>
+          <button class="dept-pill" data-dept="Data Science & Quantum Computing">Data Science</button>
+          <button class="dept-pill" data-dept="Digital Design & Human Computer Interaction">Design & HCI</button>
+        </div>
+
+        <!-- Student Data Display Area -->
+        <div class="records-content-wrapper">
+          <!-- Loading State -->
+          <div id="loading-state" class="state-container hidden">
+            <div class="spinner"></div>
+            <p>Fetching records from <code>http://localhost:3000/students</code>...</p>
+          </div>
+
+          <!-- Empty State -->
+          <div id="empty-state" class="state-container hidden">
+            <div class="empty-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <h3>No Students Found</h3>
+            <p>No student records match your query or filter criteria.</p>
+            <button id="btn-empty-reset" class="btn btn-primary mt-3">Reset Filters</button>
+          </div>
+
+          <!-- Table View Container -->
+          <div id="table-view-container" class="table-responsive">
+            <table class="students-table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>ID & Program</th>
+                  <th>Department</th>
+                  <th>Standing</th>
+                  <th>GPA</th>
+                  <th>Status</th>
+                  <th class="text-right">Actions (CRUD)</th>
+                </tr>
+              </thead>
+              <tbody id="students-table-body">
+                <!-- Dynamically rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Cards View Container -->
+          <div id="cards-view-container" class="cards-grid hidden">
+            <!-- Dynamically rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Table Footer: Pagination & Results Count -->
+        <div class="records-footer">
+          <div class="results-info">
+            Showing <span id="showing-count">0</span> of <span id="total-count">0</span> student records
+          </div>
+          <div class="pagination-controls" id="pagination-wrapper">
+            <!-- Pagination buttons populated by JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom API Live Inspector Drawer (Collapsible) -->
+    <section class="api-inspector glass-card" id="api-inspector-drawer">
+      <div class="api-header" id="api-inspector-toggle">
+        <div class="api-title">
+          <i class="fa-solid fa-terminal"></i>
+          <span>Live REST API & JSON-Server Console</span>
+          <span class="badge-tag">json-server v0.17.4</span>
+        </div>
+        <div class="api-controls">
+          <span class="api-status-pill"><span class="pulse-dot"></span> Port 3000 Active</span>
+          <button id="btn-clear-logs" class="btn-text-sm" title="Clear API Log"><i class="fa-solid fa-trash-can"></i> Clear</button>
+          <i class="fa-solid fa-chevron-up toggle-chevron" id="inspector-chevron"></i>
+        </div>
+      </div>
+      <div class="api-body" id="api-log-stream">
+        <div class="api-log-entry init">
+          <span class="log-time">[System]</span>
+          <span class="log-tag info">READY</span>
+          <span class="log-url">Connected to JSON-Server endpoint: <code>http://localhost:3000/students</code></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Student Profile Detail Modal -->
+  <div class="modal-overlay" id="profile-modal">
+    <div class="modal-container glass-card profile-card-modal">
+      <button class="modal-close-btn" id="btn-close-profile-modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="profile-header-banner">
+        <div class="profile-avatar-lg">
+          <img id="modal-profile-avatar" src="" alt="Student Profile">
+        </div>
+      </div>
+      <div class="profile-content">
+        <div class="profile-identity">
+          <h2 id="modal-profile-name">Sophia Chen</h2>
+          <span class="profile-id-tag" id="modal-profile-id">U2024-CS101</span>
+          <span class="status-badge" id="modal-profile-status">Enrolled</span>
+        </div>
+
+        <div class="profile-meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Department</span>
+            <span class="meta-value" id="modal-profile-dept">Computer Science & AI</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Degree</span>
+            <span class="meta-value" id="modal-profile-degree">B.S. Artificial Intelligence</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">GPA</span>
+            <span class="meta-value gpa-highlight" id="modal-profile-gpa">3.92 / 4.00</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Standing & Term</span>
+            <span class="meta-value" id="modal-profile-year">Junior • Fall 2024</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Email</span>
+            <span class="meta-value" id="modal-profile-email">sophia.chen@apexuni.edu</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Phone</span>
+            <span class="meta-value" id="modal-profile-phone">+1 (555) 234-8901</span>
+          </div>
+          <div class="meta-item full-width">
+            <span class="meta-label">Address</span>
+            <span class="meta-value" id="modal-profile-address">404 Silicon Ave, Tech District, CA</span>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="modal-btn-edit" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit Record (PUT)</button>
+          <button id="modal-btn-delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete (DELETE)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-overlay" id="delete-modal">
+    <div class="modal-container glass-card delete-confirm-modal">
+      <div class="delete-icon-box">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <h3>Confirm Student Deletion</h3>
+      <p>Are you sure you want to permanently delete <strong id="delete-student-name">this student</strong> from the database?</p>
+      <p class="delete-note"><i class="fa-solid fa-server"></i> This will send a <code>DELETE /students/:id</code> request to JSON-Server.</p>
+      <div class="modal-actions">
+        <button id="btn-cancel-delete" class="btn btn-glass">Cancel</button>
+        <button id="btn-confirm-delete" class="btn btn-danger glow-btn"><i class="fa-solid fa-trash"></i> Permanently Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>

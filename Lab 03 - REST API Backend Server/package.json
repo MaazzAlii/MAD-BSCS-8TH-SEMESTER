@@ -1,0 +1,21 @@
+{
+  "name": "98--mobile-application-universty",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db.json --static ./public --port 3000",
+    "dev": "json-server --watch db.json --static ./public --port 3000",
+    "server": "json-server --watch db.json --port 5000",
+    "test": "node test_screenshot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.43.1"
+  }
+}

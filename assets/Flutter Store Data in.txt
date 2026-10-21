@@ -1,0 +1,916 @@
+Flutter - Store Data in Hive Local Database - GeeksforGeeks https://share.google/rfyeuAW1axzt1j4EC
+in the link i find this content 'geeksforgeeks
+search icon
+
+    Courses
+    Sale
+    Tutorials
+    Interview Prep
+
+Sign In
+
+    Flutter Tutorial
+    Interview Questions
+    Projects
+    Widgets
+    UI Components
+    Design & Animations
+    Forms & Gestures
+    Navigation & Routing
+    Dart
+    Android
+    Kotlin
+    Kotlin Android
+
+Flutter - Store Data in Hive Local Database
+Last Updated : 23 Jul, 2025
+
+Hive is a data storage system on our phone where we can store data in boxes. We can store an integer, string, list of strings, Boolean, double, models, integers, etc., in Hive. Now, let us discuss where we can implement these. The first way we can use this is to save the user information user is logged in or not, and any ID or user details, so that users don’t have to log in again whenever a user opens that app. You can also store bigger data, but it will be stored for a particular device only. Hive is a NoSQL server where you can store a maximum amount of data in any form.
+Difference Between Hive and SharedPreferences
+
+Hive
+	
+
+Shared Preferences
+
+Store Maximum data in it
+	
+
+Limited to storing smaller data
+
+Store Data in any type of data type
+	
+
+Limited to some data types
+
+Useful for storing larger data
+	
+
+Useful for storing small data
+
+Both work well. It's up to your requirement to choose which one is best suitable for you.
+
+For Shared Preferences, you can refer to this amazing article Flutter- SharedPreferences.
+Step-by-Step Implementation
+Step 1: Create a new Flutter Application
+
+Create a new Flutter application using the command Prompt. To create a new app, write thefollowing,w command and run it.
+
+flutter create app_name
+
+    To know more about it refer this article: Creating a Simple Application in Flutter.
+
+Step 2: Adding the Dependency
+
+To add the dependency to the pubspec.yaml file, add hive_flutter as a dependency in the dependencies part of the pubspec.yaml file, as shown below:
+
+dependencies:
+     flutter:
+       sdk: flutter
+     hive_flutter: ^1.1.0
+
+Now run the below command in the terminal.
+
+flutter pub get
+
+Or
+
+Run the below command in the terminal.
+
+flutter pub add hive_flutter
+
+
+Step 3: File Structure
+
+We will be using this File Structure in our Application.
+folder_structure
+Step 4: Initialize the Hive Box
+
+Initialize the hive box, that we are going to use for storing the data.
+
+Future main() async {
+    // It is used so that void main function 
+    // can be intiated after successfully
+    // intialization of data
+    WidgetsFlutterBinding.ensureInitialized();
+
+    // To intialise the hive database
+    await Hive.initFlutter();
+
+    runApp(const MyApp());
+}
+
+
+Step 5: Open the Hive Box
+
+Open the Hive Box in the main function
+
+Future main() async {
+  // It is used so that void main function can
+  // be intiated after successfully intialization of data
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // To intialise the hive database
+  await Hive.initFlutter();
+
+  // To open the user hive box
+  await Hive.openBox(userHiveBox);
+
+  runApp(const MyApp());
+}
+
+
+Step 6: Working with main.dart
+
+main.dart:
+
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_geeks/Hive_box_const.dart';
+import 'package:flutter_geeks/HomeScreen.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+Future main() async {
+    // It is used so that void main function can
+    // be intiated after successfully intialization of data
+    WidgetsFlutterBinding.ensureInitialized();
+    
+    // To intialise the hive database
+    await Hive.initFlutter();
+    
+    // To open the user hive box
+    await Hive.openBox(userHiveBox);
+    runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+       home: HomeScreen()
+       );
+  }
+}
+
+
+Step 7: Name HiveBox
+
+Write all your HiveBox names in one file as mentioned below.
+
+// Constant Name of Box where we will store details of user
+const String userHiveBox="User Box";
+
+
+Step 8: Working With Hive_functions
+
+For better coding and understanding, we will write all the Hive Functions in one class as a separate file named Hive_functions.dart.
+
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter_templates/hive_box_constant.dart';
+
+class HiveFunctions {
+  // Box which will use to store the things
+  static final userBox = Hive.box(userHiveBox);
+}
+
+
+Now we will add all the hive functions in the file named as hive_functions.dart
+
+1. Create:
+
+This will create the box or add the data to box.
+
+// Create or add single data in hive
+static createUser(Map data) {
+    userBox.add(data);
+}
+
+// Create or add multiple data in hive
+static addAllUser(List data) {
+    userBox.addAll(data);
+}
+
+
+2. Read:
+
+To read the data you have stored.
+
+// Get All data  stored in hive
+static List getAllUsers() {
+    final data = userBox.keys.map((key) {
+        final value = userBox.get(key);
+        return {"key": key, "name": value["name"], "email": value['email']};
+    }).toList();
+
+    return data.reversed.toList();
+}
+
+// Get data for particular user in hive
+static Map getUser(int key) {
+    return userBox.get(key);
+}
+
+
+3. Update:
+
+Update the data that is already store.
+
+// update data for particular user in hive
+static updateUser(int key, Map data) {
+    userBox.put(key, data);
+}
+
+
+4. Delete:
+
+Delete the data that is already stored.
+
+// delete data for particular user in hive
+static deleteUser(int key) {
+    return userBox.delete(key);
+}
+
+// delete data for particular user in hive
+static deleteAllUser(int key) {
+    return userBox.deleteAll(userBox.keys);
+}
+
+
+Hive_functions.dart:
+
+import 'package:flutter_geeks/Hive_box_const.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+class HiveFunctions {
+    // Box which will use to store the things
+    static final userBox = Hive.box(userHiveBox);
+    
+    // Create or add single data in hive
+    static createUser(Map data) {
+        userBox.add(data);
+    }
+    
+    // Create or add multiple data in hive
+    static addAllUser(List data) {
+        userBox.addAll(data);
+    }
+    
+    // Get All data  stored in hive
+    static List getAllUsers() {
+        final data =
+        userBox.keys.map((key) {
+            final value = userBox.get(key);
+            return {"key": key, "name": value["name"], "email": value['email']};
+        }).toList();
+        
+        return data.reversed.toList();
+    }
+    
+    // Get data for particular user in hive
+    static Map getUser(int key) {
+        return userBox.get(key);
+    }
+    
+    // update data for particular user in hive
+    static updateUser(int key, Map data) {
+        userBox.put(key, data);
+    }
+    
+    // delete data for particular user in hive
+    static deleteUser(int key) {
+        return userBox.delete(key);
+    }
+    
+    // delete data for particular user in hive
+    static deleteAllUser(int key) {
+        return userBox.deleteAll(userBox.keys);
+    }
+}
+
+
+Step 9: Working With HomeScreen
+
+On the first screen I will add 1 floating action button will add value to hive database and will have list where list which will show the saved value in hive and in that list tile there will be two button for edit and delete items/users and 1 variable for list stored in database.
+
+HomeScreen.dart:
+
+import 'package:flutter/material.dart';
+import 'package:hive_flutter_templates/hive_functions.dart';
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  // Local Variable Where we save 
+  // the hive data of current context
+  List myHiveData = [];
+  
+  // TextFields' controllers for adding  or updating data
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  
+  // To Update the data from Hive in local variable
+  getHiveData() {
+    myHiveData = HiveFunctions.getAllUsers();
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Update the initial data
+    // when page is loading
+    getHiveData();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("CRUD Operations"),
+          actions: [
+            // To refreah the Data stored in Hive
+            IconButton(
+                onPressed: () {
+                  getHiveData();
+                },
+                icon: const Icon(Icons.refresh))
+          ],
+        ),
+        // To add or create the data in Hive
+        floatingActionButton: FloatingActionButton.extended(
+            label: const Text("Add Data"),
+            icon: const Icon(Icons.add),
+            onPressed: () {
+              showForm(null);
+            }),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: myHiveData.isEmpty // To show when no data is stored
+              ? const Center(
+                  child: Text(
+                  "No Data is Stored",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ))
+              // To show when data is stored
+              : Column(
+                  children: List.generate(myHiveData.length, (index) {
+                  final userData = myHiveData[index];
+                  return Card(
+                    child: ListTile(
+                      title: //Show Name of user stored in data base
+                          Text("Name : ${userData["name"]}"),
+                      subtitle: //Show Email of user stored in data base
+                          Text("Email : ${userData["email"]}"),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // To edit the data stored
+                          IconButton(
+                              onPressed: () {
+                                showForm(userData["key"]);
+                              },
+                              icon: const Icon(Icons.edit)),
+                          // To delete the data stored
+                          IconButton(
+                              onPressed: () {
+                                HiveFunctions.deleteUser(userData["key"]);
+                                // To refreah the Data stored in Hive after deletion
+                                getHiveData();
+                              },
+                              icon: const Icon(Icons.delete)),
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList()),
+        ));
+  }
+
+// dialog box to create or update the data in hive
+void showForm(int? itemKey) async {
+    // itemKey == null -> create new item
+    // itemKey != null -> update an existing item
+
+    if (itemKey != null) {
+      // To find the existing item in our  local database
+      final existingItem =
+          myHiveData.firstWhere((element) => element['key'] == itemKey);
+      _nameController.text = existingItem['name'];
+      _emailController.text = existingItem['email'];
+    }
+
+    showModalBottomSheet(
+        context: context,
+        elevation: 5,
+        isScrollControlled: true,
+        builder: (_) => Container(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                  top: 15,
+                  left: 15,
+                  right: 15),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                      child: Text(
+                    itemKey == null ? 'Create New' : 'Update',
+                    style: const TextStyle(
+                        fontSize: 22, fontWeight: FontWeight.w600),
+                  )),
+                  TextField(
+                    controller: _nameController,
+                    decoration: const InputDecoration(hintText: 'Name'),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextField(
+                    controller: _emailController,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(hintText: 'Email'),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () async {
+                      // Save new item
+                      if (itemKey == null) {
+                        HiveFunctions.createUser({
+                          "email": _emailController.text,
+                          "name": _nameController.text
+                        });
+                      }
+
+                      // update an existing item
+                      if (itemKey != null) {
+                        HiveFunctions.updateUser(itemKey, {
+                          "email": _emailController.text,
+                          "name": _nameController.text
+                        });
+                      }
+
+                      // Clear the text fields
+                      _nameController.text = '';
+                      _emailController.text = '';
+
+                      Navigator.of(context).pop(); // Close the bottom sheet
+                      // To refresh the Data stored in Hive after updation
+                      getHiveData();
+                    },
+                    child: Text(itemKey == null ? 'Create New' : 'Update'),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  )
+                ],
+              ),
+            ));
+  }
+}
+
+
+Here, we are calling different functions on different onClick and initstate.
+
+    We will call the getAll function in initState.
+    Show the form function in the floating action button.
+    Update the function in the edit button.
+    Delete function in the delete button.
+
+
+Complete Source Code
+
+There are multiple files of dart used in our Application as mentioned below:
+
+import 'package:flutter/material.dart';
+import 'package:flutter_geeks/Hive_functions.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  // Local Variable Where we save
+  // the hive data of current context
+  List myHiveData = [];
+
+  // TextFields' controllers for adding  or updating data
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+
+  // To Update the data from Hive in local variable
+  getHiveData() {
+    myHiveData = HiveFunctions.getAllUsers();
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Update the initial data
+    // when page is loading
+    getHiveData();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("CRUD Operations"),
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+        actions: [
+          // To refreah the Data stored in Hive
+          IconButton(
+            onPressed: () {
+              getHiveData();
+            },
+            icon: const Icon(Icons.refresh),
+          ),
+        ],
+      ),
+      // To add or create the data in Hive
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+        label: const Text("Add Data"),
+        icon: const Icon(Icons.add),
+        onPressed: () {
+          showForm(null);
+        },
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child:
+            myHiveData
+                    .isEmpty // To show when no data is stored
+                ? const Center(
+                  child: Text(
+                    "No Data is Stored",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                )
+                // To show when data is stored
+                : Column(
+                  children:
+                      List.generate(myHiveData.length, (index) {
+                        final userData = myHiveData[index];
+                        return Card(
+                          child: ListTile(
+                            title: //Show Name of user stored in data base
+                                Text("Name : ${userData["name"]}"),
+                            subtitle: //Show Email of user stored in data base
+                                Text("Email : ${userData["email"]}"),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                // To edit the data stored
+                                IconButton(
+                                  onPressed: () {
+                                    showForm(userData["key"]);
+                                  },
+                                  icon: const Icon(Icons.edit),
+                                ),
+                                // To delete the data stored
+                                IconButton(
+                                  onPressed: () {
+                                    HiveFunctions.deleteUser(userData["key"]);
+                                    // To refreah the Data stored in Hive after deletion
+                                    getHiveData();
+                                  },
+                                  icon: const Icon(Icons.delete),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                ),
+      ),
+    );
+  }
+
+  // dialog box to create or update the data in hive
+  void showForm(int? itemKey) async {
+    // itemKey == null -> create new item
+    // itemKey != null -> update an existing item
+
+    if (itemKey != null) {
+      // To find the existing item in our  local database
+      final existingItem = myHiveData.firstWhere(
+        (element) => element['key'] == itemKey,
+      );
+      _nameController.text = existingItem['name'];
+      _emailController.text = existingItem['email'];
+    }
+
+    showModalBottomSheet(
+      context: context,
+      elevation: 5,
+      isScrollControlled: true,
+      builder:
+          (_) => Container(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
+              top: 15,
+              left: 15,
+              right: 15,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Text(
+                    itemKey == null ? 'Create New' : 'Update',
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                TextField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(hintText: 'Name'),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(hintText: 'Email'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () async {
+                    // Save new item
+                    if (itemKey == null) {
+                      HiveFunctions.createUser({
+                        "email": _emailController.text,
+                        "name": _nameController.text,
+                      });
+                    }
+
+                    // update an existing item
+                    if (itemKey != null) {
+                      HiveFunctions.updateUser(itemKey, {
+                        "email": _emailController.text,
+                        "name": _nameController.text,
+                      });
+                    }
+
+                    // Clear the text fields
+                    _nameController.text = '';
+                    _emailController.text = '';
+
+                    Navigator.of(context).pop(); // Close the bottom sheet
+                    // To refresh the Data stored in Hive after updation
+                    getHiveData();
+                  },
+                  child: Text(itemKey == null ? 'Create New' : 'Update'),
+                ),
+                const SizedBox(height: 15),
+              ],
+            ),
+          ),
+    );
+  }
+}
+
+
+Output:
+
+
+Commonly Faced Errors with Solutions
+
+There are few commonly faced errors with Hive by users as mentioned below.
+
+1. Unhandled Exception: HiveError: You need to initialize Hive or provide a path to store the box.
+
+    Solution: You forgot to initialize the hive in the main function
+
+2. The following HiveError was thrown while building Builder: Box not found. Did you forget to call Hive.openBox()?
+
+    Solution: You forgot to open the box.
+
+3. Unhandled exception: MissingPluginException(No implementation found for method getAll on channel plugins.flutter.io/hive_flutter)
+
+    Solution: Uninstall the application and reinstall it.
+
+Comment
+
+F
+flutterwings
+4
+Explore
+
+    Basics
+        Flutter Tutorial
+        7 min read
+        Flutter | An introduction to the open source SDK by Google
+        5 min read
+        Flutter - Architecture Application
+        3 min read
+        Android Studio Setup for Flutter Development
+        3 min read
+        Getting Started with Cross-Platform Mobile Application using Flutter
+        7 min read
+        Flutter Development in Ubuntu 20.04
+        5 min read
+    Key Widgets
+        Widgets in Flutter
+        5 min read
+        Container class in Flutter
+        8 min read
+        Scaffold class in Flutter with Examples
+        8 min read
+        MaterialApp class in Flutter
+        7 min read
+        Drawer Widget in Flutter
+        5 min read
+        Flutter - AppBar Widget
+        7 min read
+        Flutter - RichText Widget
+        3 min read
+    UI Components
+        Flutter - Tabs
+        2 min read
+        Flutter - Horizontal List
+        3 min read
+        Flutter - Expansion Tile Card
+        3 min read
+        Icon Class in Flutter
+        2 min read
+        Expanded Class in Flutter
+        3 min read
+        Flutter - Dialogs
+        5 min read
+        Flutter - Circular & Linear Progress Indicators
+        4 min read
+        Flutter - Staggered Grid View
+        4 min read
+    Design & Animations
+        Customizing Fonts in Flutter
+        4 min read
+        Flutter - Skeleton Text
+        3 min read
+        Flutter - Themes
+        3 min read
+        Flutter - Lazy Loader
+        5 min read
+        Flutter - UI Orientation
+        2 min read
+        Flutter - Animation in Route Transition
+        3 min read
+        Flutter - Physics Simulation in Animation
+        4 min read
+        Flutter - Radial Hero Animation
+        3 min read
+        Flutter - Hinge Animation
+        4 min read
+        Flutter - Lottie Animation
+        3 min read
+    Forms & Gestures
+        Form Validation in Flutter
+        3 min read
+        Designing a Form Submission Page in Flutter
+        3 min read
+        Flutter - Gestures
+        3 min read
+    Navigation & Routing
+        URLs in Flutter
+        5 min read
+        Routes and Navigator in Flutter
+        4 min read
+        Flutter - WebSockets
+        3 min read
+        Flutter - Named Routes
+        3 min read
+        Flutter - Arguments in Named Routes
+        4 min read
+        Multi Page Applications in Flutter
+        5 min read
+        Flutter - Updating Data on the Internet
+        5 min read
+        Flutter - Fetching Data From the Internet
+        4 min read
+        Flutter - Deleting Data On The Internet
+        4 min read
+        Flutter - Sending Data To The Internet
+        5 min read
+        Flutter - Send Data to Screen
+        4 min read
+    Hardware Interaction
+        Gallery Access and Camera in Flutter
+        3 min read
+        Camera Access in Flutter
+        3 min read
+        Background local notifications in Flutter
+        6 min read
+        Restrict Landscape mode in Flutter
+        2 min read
+    Sample Flutter Apps
+        Basic Quiz App In Flutter
+        8 min read
+        Creating a Hello World App Using Flutter
+        4 min read
+        Flutter - Simple PDF Generating App
+        9 min read
+        Flutter - Magic 8 Ball App
+        3 min read
+    Advance Concepts
+        Flutter - Read and Write Data on Firebase
+        4 min read
+        Mail and SMS in Flutter
+        5 min read
+        Making Calls in Flutter
+        7 min read
+        FAB - Speed Dial in Flutter
+        5 min read
+        Flutter Wakelock
+        3 min read
+        Flutter Tutorial
+        7 min read
+    Courses
+        MERN Full Stack Course
+        2 min read
+
+GeeksforGeeks
+location
+Corporate & Communications Address:
+A-143, 6th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305)
+location
+Registered Address:
+K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305
+GFG App on Play Store
+GFG App on App Store
+
+    Company
+    About Us
+    Legal
+    Privacy Policy
+    Contact Us
+    Advertise with us
+    GFG Corporate Solution
+    Campus Training Program
+
+    Explore
+    POTD
+    Job-A-Thon
+    Blogs
+    Nation Skill Up
+
+    Tutorials
+    Programming Languages
+    DSA
+    Web Technology
+    AI, ML & Data Science
+    DevOps
+    CS Core Subjects
+    Interview Preparation
+    Software and Tools
+
+    Courses
+    ML and Data Science
+    DSA and Placements
+    Web Development
+    Programming Languages
+    DevOps & Cloud
+    GATE
+    Trending Technologies
+
+    Videos
+    DSA
+    Python
+    Java
+    C++
+    Web Development
+    Data Science
+    CS Subjects
+
+    Preparation Corner
+    Interview Corner
+    Aptitude
+    Puzzles
+    GfG 160
+    System Design
+
+@GeeksforGeeks, Sanchhaya Education Private Limited, All rights reserved
+
+'
