@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur-PK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAD BSCS 8th Semester • Open-Ended Lab Master Guide & Viva Trainer</title>
+  <title>MAD BSCS 8th Semester • Open-Ended Lab Viva Guide (Roman Urdu)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -59,7 +59,6 @@
       padding-bottom: 120px;
     }
 
-    /* TOP HEADER & NAVBAR */
     .top-bar {
       position: sticky;
       top: 0;
@@ -87,13 +86,13 @@
     .brand-icon {
       width: 36px;
       height: 36px;
-      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      background: linear-gradient(135deg, #ef4444, #f59e0b);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
     }
 
     .nav-actions {
@@ -119,95 +118,79 @@
     }
     .btn-toggle:hover {
       background: var(--bg-card-hover);
-      border-color: var(--accent-indigo);
+      border-color: var(--accent-blue);
     }
 
-    /* CONTAINER */
     .container {
-      max-width: 1200px;
+      max-width: 1050px;
       margin: 0 auto;
       padding: 30px 20px;
     }
 
-    /* HERO BANNER */
     .hero {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(56, 189, 248, 0.08));
-      border: 1px solid rgba(99, 102, 241, 0.25);
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.08));
+      border: 1px solid rgba(239, 68, 68, 0.25);
       border-radius: 20px;
-      padding: 36px;
-      margin-bottom: 36px;
+      padding: 32px;
+      margin-bottom: 30px;
       position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%);
-      pointer-events: none;
     }
     .badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 16px;
-      background: rgba(99, 102, 241, 0.2);
-      color: var(--accent-indigo);
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      margin-bottom: 14px;
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
     }
     .hero h1 {
-      font-size: 2.3rem;
+      font-size: 2.1rem;
       font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      line-height: 1.25;
     }
     .hero p {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 820px;
+      font-size: 1.02rem;
     }
 
-    /* WARNING ALERT BOX */
-    .alert-box {
-      margin-top: 20px;
-      background: rgba(244, 63, 94, 0.1);
-      border: 1px solid rgba(244, 63, 94, 0.3);
+    .scenario-box {
+      margin-top: 18px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
       border-radius: 12px;
       padding: 16px 20px;
       display: flex;
       gap: 14px;
       align-items: flex-start;
     }
-    .alert-box .icon {
-      font-size: 1.4rem;
-      color: var(--accent-rose);
+    .scenario-box .icon {
+      font-size: 1.5rem;
       flex-shrink: 0;
     }
-    .alert-box .text strong {
-      color: var(--accent-rose);
+    .scenario-box .text h4 {
+      color: var(--accent-green);
+      font-size: 1rem;
+      margin-bottom: 4px;
     }
-    .alert-box .text p {
-      font-size: 0.95rem;
+    .scenario-box .text p {
+      font-size: 0.92rem;
       color: var(--text-main);
-      margin-top: 4px;
     }
 
-    /* SECTION TABS */
     .tab-bar {
       display: flex;
       gap: 8px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       overflow-x: auto;
       padding-bottom: 8px;
     }
@@ -230,96 +213,70 @@
     }
     .tab-btn.active {
       color: var(--text-main);
-      background: var(--accent-indigo);
+      background: #ef4444;
     }
 
-    /* TOPIC PILLARS GRID */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      margin-bottom: 36px;
-    }
-    .pillar-card {
+    .flow-diagram {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 24px;
-      transition: transform 0.2s, border-color 0.2s;
+      margin-bottom: 28px;
       box-shadow: var(--card-shadow);
     }
-    .pillar-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent-indigo);
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
     }
-    .pillar-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .pillar-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-    }
-    .pillar-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-    .pillar-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-    .pillar-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .pillar-tag {
+    .flow-node {
       background: var(--bg-code);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-family: 'Fira Code', monospace;
-      color: var(--accent-blue);
       border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      border-top: 4px solid var(--accent-blue);
+    }
+    .flow-node h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flow-node p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
-    /* VIVA ACCORDION */
     .viva-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       overflow: hidden;
       box-shadow: var(--card-shadow);
       transition: border-color 0.2s;
     }
     .viva-card:hover {
-      border-color: var(--accent-indigo);
+      border-color: #ef4444;
     }
     .viva-question {
-      padding: 18px 22px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.98rem;
       user-select: none;
       gap: 12px;
     }
     .viva-category {
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 8px;
+      padding: 3px 8px;
       border-radius: 6px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -334,14 +291,14 @@
     }
     .viva-card.open .viva-arrow {
       transform: rotate(180deg);
-      color: var(--accent-indigo);
+      color: #ef4444;
     }
     .viva-answer {
       display: none;
-      padding: 18px 22px;
+      padding: 16px 20px;
       border-top: 1px solid var(--border);
       background: rgba(0, 0, 0, 0.15);
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       line-height: 1.6;
       color: var(--text-muted);
     }
@@ -364,19 +321,67 @@
       border: 1px solid var(--border);
     }
 
-    /* CODE BLOCKS */
+    .pitch-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(239, 68, 68, 0.08));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .pitch-step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .pitch-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      color: #064e3b;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .pitch-content h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--accent-green);
+    }
+    .pitch-content p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+    .pitch-quote {
+      background: rgba(0,0,0,0.25);
+      border-left: 3px solid var(--accent-green);
+      padding: 8px 12px;
+      margin-top: 6px;
+      border-radius: 4px;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: #a7f3d0;
+    }
+    body.light-mode .pitch-quote {
+      background: rgba(16, 185, 129, 0.1);
+      color: #065f46;
+    }
+
     .code-container {
       background: var(--bg-code);
       border: 1px solid var(--border);
       border-radius: 12px;
-      margin: 16px 0 28px 0;
+      margin: 16px 0 24px 0;
       overflow: hidden;
     }
     .code-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 18px;
+      padding: 10px 16px;
       background: rgba(255, 255, 255, 0.03);
       border-bottom: 1px solid var(--border);
       font-size: 0.85rem;
@@ -395,66 +400,16 @@
       transition: all 0.2s;
     }
     .btn-copy:hover {
-      background: var(--accent-indigo);
+      background: #ef4444;
       color: #fff;
     }
     pre {
-      padding: 18px;
+      padding: 16px;
       overflow-x: auto;
       font-family: 'Fira Code', monospace;
-      font-size: 0.88rem;
-      line-height: 1.55;
+      font-size: 0.85rem;
+      line-height: 1.5;
       color: #e2e8f0;
-    }
-
-    /* SCRIPT BOX */
-    .pitch-box {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.08));
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      border-radius: 16px;
-      padding: 28px;
-      margin-bottom: 30px;
-    }
-    .pitch-step {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .pitch-num {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--accent-green);
-      color: #064e3b;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.95rem;
-    }
-    .pitch-content h4 {
-      font-size: 1.05rem;
-      margin-bottom: 4px;
-      color: var(--accent-green);
-    }
-    .pitch-content p {
-      font-size: 0.92rem;
-      color: var(--text-main);
-    }
-    .pitch-quote {
-      background: rgba(0,0,0,0.25);
-      border-left: 3px solid var(--accent-green);
-      padding: 10px 14px;
-      margin-top: 8px;
-      border-radius: 4px;
-      font-style: italic;
-      font-size: 0.9rem;
-      color: #a7f3d0;
-    }
-    body.light-mode .pitch-quote {
-      background: rgba(16, 185, 129, 0.1);
-      color: #065f46;
     }
 
     .tab-content {
@@ -464,14 +419,13 @@
       display: block;
     }
 
-    /* TOAST */
     #toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: var(--accent-indigo);
+      background: #ef4444;
       color: #ffffff;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.9rem;
@@ -493,10 +447,10 @@
   <!-- TOP HEADER -->
   <header class="top-bar">
     <div class="brand">
-      <div class="brand-icon">🚛</div>
+      <div class="brand-icon">🎬</div>
       <div>
-        <span>AeroFleet</span>
-        <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted); margin-left: 6px;">Open-Ended Lab Hub</span>
+        <span>Creator Studio</span>
+        <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted); margin-left: 6px;">Open-Ended Lab (Roman Urdu)</span>
       </div>
     </div>
     <div class="nav-actions">
@@ -508,363 +462,256 @@
 
   <div class="container">
     
-    <!-- HERO HEADER -->
+    <!-- HERO -->
     <section class="hero">
-      <div class="badge-pill">BSCS 8th Semester • University Lab Exam</div>
-      <h1>AeroFleet: Logistics Fleet & Vehicle Dispatch System</h1>
-      <p>A completely unique, production-grade Flutter application combining all 6 required syllabus topics without code comments — engineered to satisfy the professor's strict originality rule.</p>
+      <div class="badge-pill">BSCS 8th Semester • University Open-Ended Lab Mid Exam</div>
+      <h1>Creator Studio: Content Creator Video & Post Manager</h1>
+      <p>Yeh simple aur to-the-point project hai. Isme koi faltu complex login screen nahi hai — single clean UI hai jo tamam 6 required syllabus topics ko natural tareeqe se cover karti hai.</p>
 
-      <div class="alert-box">
-        <div class="icon">⚠️</div>
+      <div class="scenario-box">
+        <div class="icon">🎯</div>
         <div class="text">
-          <strong>Teacher's Strict Warning:</strong>
-          <p>"Every student must have a different scenario. If two students' scenarios match, marks will only be given to whoever presents first — all others fail!"</p>
-          <p style="margin-top: 6px; font-weight: 500; color: var(--accent-amber);">
-            ✅ <strong>Why You Are 100% Safe:</strong> 95% of students will build generic Todo apps, Student Portals, or Shopping Carts. AeroFleet (Commercial Vehicle Fleet, Odometer Maintenance & Highway Safety API) is a unique commercial logistics ledger guaranteed to stand out with zero collision!
-          </p>
+          <h4>Scenario Unique Kyun Hai Aur Marks Kaise Pakkay Hain?</h4>
+          <p>Class ke 90% students ya toh basic Todo App banayein ge ya generic Student Counter. Humara scenario <strong>"Content Creator Dashboard" (YouTube / TikTok / Instagram Videos, Views Tracker, SQLite DB aur Live Trending Ideas API)</strong> bilkul unique aur realistic hai — kisi aur student se match hone ka 0% chance hai!</p>
         </div>
       </div>
     </section>
 
-    <!-- NAVIGATION TABS -->
+    <!-- TABS -->
     <nav class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab('tab-pillars', this)">🏛️ The 6 Required Pillars</button>
-      <button class="tab-btn" onclick="switchTab('tab-viva', this)">🎯 25+ Viva Questions & Answers</button>
-      <button class="tab-btn" onclick="switchTab('tab-pitch', this)">🎙️ 2-Minute Presentation Pitch</button>
-      <button class="tab-btn" onclick="switchTab('tab-code', this)">💻 Clean Dart Code Vault</button>
+      <button class="tab-btn active" onclick="switchTab('tab-architecture', this)">🗺️ App Architecture (Roman Urdu)</button>
+      <button class="tab-btn" onclick="switchTab('tab-viva', this)">🎯 Viva Voce Q&A (Roman Urdu)</button>
+      <button class="tab-btn" onclick="switchTab('tab-pitch', this)">🎙️ Sir Ke Samne 1-Minute Script</button>
+      <button class="tab-btn" onclick="switchTab('tab-code', this)">💻 Clean Code (No Comments)</button>
     </nav>
 
-    <!-- TAB 1: PILLARS -->
-    <section id="tab-pillars" class="tab-content active">
-      <div class="pillars-grid">
+    <!-- TAB 1: ARCHITECTURE (ROMAN URDU) -->
+    <section id="tab-architecture" class="tab-content active">
+      <div class="flow-diagram">
+        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">🧩 App Ka Simple Flow Aur 6 Topics Ka Connection</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">Sirf 2 simple screens hain — bilkul Lab 1 se Lab 5 ke level ke mutabiq:</p>
 
-        <!-- Pillar 1: SQFLite -->
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <div class="pillar-icon" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">🗄️</div>
-            <div>
-              <h3>1. SQFLite Relational DB</h3>
-              <span style="font-size: 0.8rem; color: var(--accent-blue); font-weight: 600;">fleet_manager.db</span>
-            </div>
+        <div class="flow-grid">
+          
+          <div class="flow-node" style="border-top-color: var(--accent-amber);">
+            <h4><span>🔑</span> 1. SharedPreferences (Creator Name)</h4>
+            <p><strong>App Bar Mein Channel Name:</strong> Default name <code>'Maaz Creator'</code> device disk par save hota hai. Edit button dabane par dialog khulta hai aur naya naam <code>SharedPreferences.setString('creatorName', val)</code> se permanently save ho jata hai.</p>
           </div>
-          <p>Local SQLite relational database implemented via a Singleton <code>DatabaseHelper</code>. Manages the <code>vehicles</code> table with full CRUD (Create, Read, Update, Delete) for fleet carriers.</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">DatabaseHelper._init()</span>
-            <span class="pillar-tag">insertVehicle()</span>
-            <span class="pillar-tag">queryAll</span>
-            <span class="pillar-tag">delete()</span>
+
+          <div class="flow-node" style="border-top-color: var(--accent-blue);">
+            <h4><span>🗄️</span> 2. SQFLite (Local Database)</h4>
+            <p><strong>DBHelper Singleton:</strong> <code>content_creator.db</code> ke andar <code>contents</code> table bani hui hai (id, title, platform, views). User jab '+' button se video post dalta hai toh woh seedha SQLite mein insert hoti hai.</p>
           </div>
+
+          <div class="flow-node" style="border-top-color: var(--accent-purple);">
+            <h4><span>⚡</span> 3. Provider State Management</h4>
+            <p><strong>ContentProvider (ChangeNotifier):</strong> UI ko database ke sath sync rakhta hai. Video add ya delete hote hi <code>notifyListeners()</code> call hota hai aur bina <code>setState</code> ke UI aur Total Views counter update ho jate hain.</p>
+          </div>
+
+          <div class="flow-node" style="border-top-color: var(--accent-green);">
+            <h4><span>📱</span> 4. ListView.builder (Widgets)</h4>
+            <p><strong>Recycling List:</strong> Creator ke tamam uploads (YouTube, TikTok, Instagram) clean Cards aur ListTiles mein display hotay hain with platform icon, views count aur delete button.</p>
+          </div>
+
+          <div class="flow-node" style="border-top-color: var(--accent-rose);">
+            <h4><span>🧭</span> 5. Navigation Using Named Routes</h4>
+            <p><strong>MaterialApp.routes:</strong> Root path <code>'/'</code> dashboard screen pe khulta hai aur top trending icon dabane par <code>Navigator.pushNamed(context, '/trends')</code> se API screen khulti hai.</p>
+          </div>
+
+          <div class="flow-node" style="border-top-color: var(--accent-indigo);">
+            <h4><span>🌐</span> 6. REST API Client (FutureBuilder)</h4>
+            <p><strong>Remote Trends Screen:</strong> <code>http.get()</code> se live trending ideas fetch hotay hain aur <code>FutureBuilder</code> loading spinner aur data list handle karta hai.</p>
+          </div>
+
         </div>
-
-        <!-- Pillar 2: SharedPreferences -->
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <div class="pillar-icon" style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber);">🔑</div>
-            <div>
-              <h3>2. SharedPreferences</h3>
-              <span style="font-size: 0.8rem; color: var(--accent-amber); font-weight: 600;">Key-Value Session</span>
-            </div>
-          </div>
-          <p>Manages persistent Dispatcher login state across app restarts. Stores officer name, badge ID, assigned hub, dark mode preference, and handles session clearing on logout.</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">getBool('isLoggedIn')</span>
-            <span class="pillar-tag">setString()</span>
-            <span class="pillar-tag">prefs.clear()</span>
-            <span class="pillar-tag">AuthGate</span>
-          </div>
-        </div>
-
-        <!-- Pillar 3: Provider -->
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <div class="pillar-icon" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple);">⚡</div>
-            <div>
-              <h3>3. Provider State Mgmt</h3>
-              <span style="font-size: 0.8rem; color: var(--accent-purple); font-weight: 600;">ChangeNotifier</span>
-            </div>
-          </div>
-          <p>Decouples business logic from UI. <code>FleetProvider</code> manages the vehicle list, search queries, status filters, and view-mode toggling, notifying listening widgets via <code>notifyListeners()</code>.</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">context.watch()</span>
-            <span class="pillar-tag">context.read()</span>
-            <span class="pillar-tag">notifyListeners()</span>
-            <span class="pillar-tag">MultiProvider</span>
-          </div>
-        </div>
-
-        <!-- Pillar 4: Named Routes -->
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <div class="pillar-icon" style="background: rgba(244, 63, 94, 0.15); color: var(--accent-rose);">🧭</div>
-            <div>
-              <h3>4. Named Routes</h3>
-              <span style="font-size: 0.8rem; color: var(--accent-rose); font-weight: 600;">Centralized Router</span>
-            </div>
-          </div>
-          <p>Clean multi-screen navigation using centralized string routes (<code>'/'</code>, <code>'/login'</code>, <code>'/dashboard'</code>, <code>'/vehicles'</code>, <code>'/add_vehicle'</code>, <code>'/api_advisories'</code>, <code>'/settings'</code>).</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">pushNamed()</span>
-            <span class="pillar-tag">pushReplacementNamed()</span>
-            <span class="pillar-tag">arguments</span>
-          </div>
-        </div>
-
-        <!-- Pillar 5: ListView & GridView -->
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <div class="pillar-icon" style="background: rgba(52, 211, 153, 0.15); color: var(--accent-green);">📱</div>
-            <div>
-              <h3>5. ListView & GridView</h3>
-              <span style="font-size: 0.8rem; color: var(--accent-green); font-weight: 600;">Dynamic Toggle</span>
-            </div>
-          </div>
-          <p>The Fleet screen features an interactive AppBar toggle that seamlessly switches between a detailed <code>ListView.builder</code> (with mileage and fuel bars) and a 2-column responsive <code>GridView.builder</code>.</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">ListView.builder</span>
-            <span class="pillar-tag">GridView.builder</span>
-            <span class="pillar-tag">SliverGridDelegate</span>
-          </div>
-        </div>
-
-        <!-- Pillar 6: API Calling -->
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <div class="pillar-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo);">🌐</div>
-            <div>
-              <h3>6. REST API Client</h3>
-              <span style="font-size: 0.8rem; color: var(--accent-indigo); font-weight: 600;">HTTP & FutureBuilder</span>
-            </div>
-          </div>
-          <p>Fetches live external Highway Safety Advisories via <code>http.get()</code>. Features robust three-phase lifecycle management (Loading spinner, Error state with Retry, and Success data cards).</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">http.get()</span>
-            <span class="pillar-tag">jsonDecode()</span>
-            <span class="pillar-tag">FutureBuilder</span>
-            <span class="pillar-tag">RefreshIndicator</span>
-          </div>
-        </div>
-
       </div>
 
-      <!-- WORKFLOW DIAGRAM -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-top: 10px;">
-        <h3 style="margin-bottom: 16px; font-size: 1.15rem;">🔄 Full Application Architecture Flow</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; font-size: 0.9rem;">
-          <div style="background: var(--bg-code); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
-            <strong>App Launch</strong><br><span style="color: var(--accent-amber);">AuthGate</span>
-          </div>
-          <span style="color: var(--accent-indigo); font-weight: bold;">➔</span>
-          <div style="background: var(--bg-code); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
-            <strong>Check Session</strong><br><span style="color: var(--accent-amber);">SharedPreferences</span>
-          </div>
-          <span style="color: var(--accent-indigo); font-weight: bold;">➔</span>
-          <div style="background: var(--bg-code); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
-            <strong>Route to Hub</strong><br><span style="color: var(--accent-rose);">Named Routes</span>
-          </div>
-          <span style="color: var(--accent-indigo); font-weight: bold;">➔</span>
-          <div style="background: var(--bg-code); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
-            <strong>State Synced</strong><br><span style="color: var(--accent-purple);">FleetProvider</span>
-          </div>
-          <span style="color: var(--accent-indigo); font-weight: bold;">➔</span>
-          <div style="background: var(--bg-code); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
-            <strong>Local Storage</strong><br><span style="color: var(--accent-blue);">SQFLite CRUD</span>
-          </div>
-          <span style="color: var(--accent-indigo); font-weight: bold;">➔</span>
-          <div style="background: var(--bg-code); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
-            <strong>Live Feed</strong><br><span style="color: var(--accent-green);">REST API</span>
-          </div>
-        </div>
+      <!-- Quick Summary Table in Roman Urdu -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px;">
+        <h4 style="margin-bottom: 12px; font-size: 1.05rem;">📋 Checklist: Sir Ko Dikhanay Ke Liye 6 Topics:</h4>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <tr style="border-bottom: 1px solid var(--border); text-align: left;">
+            <th style="padding: 10px;">Topic</th>
+            <th style="padding: 10px;">File Ka Naam</th>
+            <th style="padding: 10px;">Kya Kaam Karta Hai?</th>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px; color: var(--accent-blue); font-weight: 600;">1. SQFLite</td>
+            <td style="padding: 10px;"><code>lib/database/db_helper.dart</code></td>
+            <td style="padding: 10px;">SQLite CRUD (insertContent, getContents, deleteContent)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px; color: var(--accent-amber); font-weight: 600;">2. SharedPreferences</td>
+            <td style="padding: 10px;"><code>lib/screens/content_dashboard_screen.dart</code></td>
+            <td style="padding: 10px;">Creator Name permanently disk pe save aur edit karna</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px; color: var(--accent-purple); font-weight: 600;">3. Provider</td>
+            <td style="padding: 10px;"><code>lib/providers/content_provider.dart</code></td>
+            <td style="padding: 10px;">ChangeNotifier + notifyListeners() se reactive list aur total views count</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px; color: var(--accent-rose); font-weight: 600;">4. Named Routes</td>
+            <td style="padding: 10px;"><code>lib/main.dart</code></td>
+            <td style="padding: 10px;">routes map: {'/': Dashboard, '/trends': ApiScreen}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px; color: var(--accent-green); font-weight: 600;">5. ListView.builder</td>
+            <td style="padding: 10px;"><code>lib/screens/content_dashboard_screen.dart</code></td>
+            <td style="padding: 10px;">Lazy-loading efficient list of video cards</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; color: var(--accent-indigo); font-weight: 600;">6. API Calling</td>
+            <td style="padding: 10px;"><code>lib/screens/api_trends_screen.dart</code></td>
+            <td style="padding: 10px;">http.get() + FutureBuilder (waiting, error, data)</td>
+          </tr>
+        </table>
       </div>
     </section>
 
-    <!-- TAB 2: VIVA PRACTICE -->
+    <!-- TAB 2: VIVA IN ROMAN URDU -->
     <section id="tab-viva" class="tab-content">
-      <div style="margin-bottom: 24px;">
-        <h2 style="font-size: 1.6rem; margin-bottom: 6px;">🎯 University Viva Voce Trainer (Click any question to reveal)</h2>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">These are the exact conceptual and trap questions university professors ask during MAD BSCS 8th semester lab evaluations.</p>
+      <div style="margin-bottom: 20px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 6px;">🎯 Viva Voce Expected Questions & To-The-Point Answers (Roman Urdu)</h2>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">Har sawal par click karein aur seedha woh jawab parhein jo Sir ke samne bolna hai.</p>
       </div>
 
-      <!-- SQFLITE QUESTIONS -->
-      <h3 style="color: var(--accent-blue); margin: 24px 0 12px 0;">📂 Topic 1: SQFLite Relational Database</h3>
-      
-      <div class="viva-card" onclick="toggleViva(this)">
-        <div class="viva-question">
-          <span class="viva-category" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">SQFLite</span>
-          <span class="viva-q-text">Why did you implement DatabaseHelper as a Singleton pattern?</span>
-          <span class="viva-arrow">▼</span>
-        </div>
-        <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, SQLite database connections are heavy, costly resources. If every screen opened a new connection, it would lead to memory leaks and database lock exceptions (Database Locked error). By making <code>DatabaseHelper</code> a singleton (private constructor <code>_init()</code> and static final instance), we ensure <strong>exactly one shared instance and open connection</strong> exists throughout the app lifecycle."
-        </div>
-      </div>
+      <!-- SQFLITE -->
+      <h3 style="color: var(--accent-blue); margin: 20px 0 10px 0;">📂 Topic 1: SQFLite Database Helper</h3>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">SQFLite</span>
-          <span class="viva-q-text">What is the difference between rawQuery/execute and helper methods like insert(), update(), delete()?</span>
+          <span class="viva-q-text">Sir: "Beta, DBHelper ko Singleton pattern kyun banaya hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, <code>db.execute()</code> and <code>db.rawQuery()</code> take raw SQL strings, which are prone to syntax errors and SQL Injection attacks if parameters aren't sanitized. Helper methods like <code>db.insert('table', map)</code> and <code>db.update(..., whereArgs: [id])</code> automatically sanitize inputs, map Dart types to SQL types, and return integer statuses (e.g. inserted row ID or affected row count)."
+          <strong>Roman Urdu Jawab:</strong> "Sir, SQLite database connection ek heavy resource hoti hai. Agar har dafa naya object bane ga toh bar bar file open hogi jis se <strong>Database Lock</strong> aur <strong>Memory Leak</strong> ho sakta hai. Is liye private constructor <code>DBHelper._init()</code> aur static instance bana kar hum ensure karte hain ke poori app mein sirf <strong>ek hi open database connection</strong> rahay."
         </div>
       </div>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">SQFLite</span>
-          <span class="viva-q-text">Where is the SQLite file physically saved on the user's Android phone?</span>
+          <span class="viva-q-text">Sir: "openDatabase mein onCreate kab chalta hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, on Android it is stored in the app's internal private sandboxed directory: <code>/data/data/&lt;package_name&gt;/databases/fleet_manager.db</code>. We locate this path dynamically using <code>getDatabasesPath()</code> from the sqflite package."
+          <strong>Roman Urdu Jawab:</strong> "Sir, <code>onCreate</code> callback <strong>sirf pehli baar</strong> chalta hai jab mobile mein database ki file pehli dafa create hoti hai. Iske andar hum <code>CREATE TABLE contents (...)</code> ki SQL query chalate hain taake table ban jaye."
         </div>
       </div>
 
-      <!-- SHAREDPREFERENCES QUESTIONS -->
-      <h3 style="color: var(--accent-amber); margin: 28px 0 12px 0;">🔑 Topic 2: SharedPreferences</h3>
+      <!-- SHAREDPREFERENCES -->
+      <h3 style="color: var(--accent-amber); margin: 24px 0 10px 0;">🔑 Topic 2: SharedPreferences</h3>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber);">SharedPrefs</span>
-          <span class="viva-q-text">Why didn't you store your Vehicle fleet list inside SharedPreferences?</span>
+          <span class="viva-q-text">Sir: "Aapne SharedPreferences mein kya store karwaya hai aur kyun?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, SharedPreferences is designed strictly for lightweight primitive key-value data (booleans, strings, ints, doubles). It cannot perform indexed SQL queries, table joins, transactions, or filtering. Storing hundreds of relational records in SharedPreferences is an anti-pattern. That's why we use <strong>SQFLite for relational data</strong> and <strong>SharedPreferences for officer session state</strong> (isLoggedIn, badgeId)."
+          <strong>Roman Urdu Jawab:</strong> "Sir, SharedPreferences lightweight key-value data ke liye best hota hai. Humne isme Creator ka <strong>Channel Name</strong> (jaise 'Maaz Creator') store karwaya hai. User jab edit karta hai toh woh disk pe save ho jata hai aur app restart hone ke baad bhi wahi naam AppBar mein load hota hai."
         </div>
       </div>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber);">SharedPrefs</span>
-          <span class="viva-q-text">Why does SharedPreferences.getInstance() return a Future?</span>
+          <span class="viva-q-text">Sir: "SharedPreferences.getInstance() Future kyun return karta hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, because SharedPreferences has to read an XML file from the physical flash disk into device RAM asynchronously. Disk I/O must be asynchronous (Future) so it does not block the main Flutter UI thread (which would cause frame drops or app freezing)."
+          <strong>Roman Urdu Jawab:</strong> "Sir, kyunki SharedPreferences ko physical flash storage (XML file) se data RAM mein asynchronously read karna hota hai. Yeh disk I/O operation hota hai, agar yeh asynchronous na ho toh UI thread block ho jaye gi aur screen freeze ho sakti hai."
         </div>
       </div>
 
-      <!-- PROVIDER QUESTIONS -->
-      <h3 style="color: var(--accent-purple); margin: 28px 0 12px 0;">⚡ Topic 3: State Management with Provider</h3>
+      <!-- PROVIDER -->
+      <h3 style="color: var(--accent-purple); margin: 24px 0 10px 0;">⚡ Topic 3: State Management (Provider)</h3>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple);">Provider</span>
-          <span class="viva-q-text">What is the critical difference between context.watch() and context.read()?</span>
+          <span class="viva-q-text">Sir: "notifyListeners() ka asal maqsad kya hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir:
-          <br>• <code>context.watch&lt;FleetProvider&gt;()</code> listens to changes: whenever <code>notifyListeners()</code> is called, the widget <strong>rebuilds</strong>! Used inside the <code>build()</code> method.
-          <br>• <code>context.read&lt;FleetProvider&gt;()</code> reads the provider <strong>once without subscribing</strong> to updates. Used inside event handlers and button callbacks (e.g. <code>onPressed</code>) so we don't trigger unnecessary widget rebuilds."
+          <strong>Roman Urdu Jawab:</strong> "Sir, <code>ChangeNotifier</code> Observer pattern follow karta hai. Jab bhi hum SQLite mein naya content insert ya delete karte hain, toh hum <code>notifyListeners()</code> call karte hain. Yeh UI ko signal bhejta hai ke data update ho gaya hai, aur sirf relevant widgets re-render hotay hain bina poori screen pe <code>setState</code> lagaye."
         </div>
       </div>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple);">Provider</span>
-          <span class="viva-q-text">What does notifyListeners() do behind the scenes?</span>
+          <span class="viva-q-text">Sir: "context.watch aur context.read mein kya farq hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, <code>ChangeNotifier</code> implements the Observer Design Pattern. When <code>notifyListeners()</code> is triggered, it iterates over its internal registry of listening widgets (Consumers or context.watch callers) and calls their <code>markNeedsBuild()</code> method, queuing them for a selective frame repaint."
+          <strong>Roman Urdu Jawab:</strong> "Sir:
+          <br>• <code>context.watch&lt;ContentProvider&gt;()</code> changes ko <strong>listen karta hai</strong>: jab bhi notifyListeners chalta hai yeh widget ko rebuild karta hai (ise hum <code>build()</code> method mein use karte hain).
+          <br>• <code>context.read&lt;ContentProvider&gt;()</code> sirf <strong>ek dafa call karne ke liye</strong> hota hai bina subscription ke (ise hum button ke <code>onPressed</code> mein functions call karne ke liye use karte hain)."
         </div>
       </div>
 
-      <!-- NAMED ROUTES QUESTIONS -->
-      <h3 style="color: var(--accent-rose); margin: 28px 0 12px 0;">🧭 Topic 4: Navigation Using Named Routes</h3>
+      <!-- NAMED ROUTES -->
+      <h3 style="color: var(--accent-rose); margin: 24px 0 10px 0;">🧭 Topic 4: Navigation Using Named Routes</h3>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(244, 63, 94, 0.15); color: var(--accent-rose);">Routes</span>
-          <span class="viva-q-text">Why use Named Routes over Navigator.push(MaterialPageRoute(...))?</span>
+          <span class="viva-q-text">Sir: "Named routes kyun use kiye hain simple Navigator.push ke muqable mein?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, Named Routes provide <strong>centralized route management</strong> in <code>MaterialApp.routes</code>. In large apps, having hardcoded <code>MaterialPageRoute</code> scattered across dozens of files creates tight coupling and makes deep-linking or modifying navigation paths extremely difficult. Named routes allow clean routing using strings like <code>'/vehicles'</code>."
+          <strong>Roman Urdu Jawab:</strong> "Sir, Named Routes ka faida yeh hai ke routing <strong>centralized</strong> ho jati hai <code>MaterialApp.routes</code> map ke andar. Code mein hardcoded <code>MaterialPageRoute</code> bar bar likhne ki bajaye hum seedha <code>Navigator.pushNamed(context, '/trends')</code> likhte hain jo clean aur maintainable hota hai."
         </div>
       </div>
 
-      <div class="viva-card" onclick="toggleViva(this)">
-        <div class="viva-question">
-          <span class="viva-category" style="background: rgba(244, 63, 94, 0.15); color: var(--accent-rose);">Routes</span>
-          <span class="viva-q-text">What is the difference between pushNamed and pushReplacementNamed?</span>
-          <span class="viva-arrow">▼</span>
-        </div>
-        <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, <code>pushNamed</code> pushes a new screen onto the stack on top of the current screen, so pressing Back returns to the previous screen. <code>pushReplacementNamed</code> destroys and replaces the current route in the stack. We use <code>pushReplacementNamed</code> during Login so the user cannot click the Android hardware back button to return to the Login screen after logging in."
-        </div>
-      </div>
-
-      <!-- LISTVIEW & GRIDVIEW QUESTIONS -->
-      <h3 style="color: var(--accent-green); margin: 28px 0 12px 0;">📱 Topic 5: ListView & GridView Widgets</h3>
+      <!-- LISTVIEW -->
+      <h3 style="color: var(--accent-green); margin: 24px 0 10px 0;">📱 Topic 5: ListView.builder Widget</h3>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(52, 211, 153, 0.15); color: var(--accent-green);">Widgets</span>
-          <span class="viva-q-text">Why must you use ListView.builder instead of standard ListView(children: [...])?</span>
+          <span class="viva-q-text">Sir: "ListView.builder normal ListView(children: []) se behtar kyun hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, <code>ListView(children: [...])</code> instantiates every child widget into memory upfront, causing severe lag and OOM crashes if there are 1,000 items. <code>ListView.builder</code> employs <strong>on-demand view recycling (Lazy Loading)</strong>: it only renders items currently visible on the screen viewport, ensuring a constant 60 FPS performance."
+          <strong>Roman Urdu Jawab:</strong> "Sir, normal <code>ListView(children: [])</code> tamam items ko ek hi waqt mein memory mein load kar deta hai, agar 1000 items hon toh app hang ho sakti hai. Jabke <code>ListView.builder</code> <strong>Lazy Loading aur View Recycling</strong> use karta hai — yani sirf wohi cards render karta hai jo mobile screen par is waqt nazar aa rahay hotay hain."
         </div>
       </div>
 
-      <div class="viva-card" onclick="toggleViva(this)">
-        <div class="viva-question">
-          <span class="viva-category" style="background: rgba(52, 211, 153, 0.15); color: var(--accent-green);">Widgets</span>
-          <span class="viva-q-text">What is SliverGridDelegateWithFixedCrossAxisCount in GridView?</span>
-          <span class="viva-arrow">▼</span>
-        </div>
-        <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, it is the delegate that controls the layout grid mathematics. <code>crossAxisCount: 2</code> tells Flutter to layout 2 columns across the horizontal axis, and <code>childAspectRatio: 0.82</code> defines the width-to-height ratio of each card item so they don't overflow."
-        </div>
-      </div>
-
-      <!-- API CALLING QUESTIONS -->
-      <h3 style="color: var(--accent-indigo); margin: 28px 0 12px 0;">🌐 Topic 6: REST API Calling & FutureBuilder</h3>
+      <!-- API CALLING -->
+      <h3 style="color: var(--accent-indigo); margin: 24px 0 10px 0;">🌐 Topic 6: REST API Calling & FutureBuilder</h3>
 
       <div class="viva-card" onclick="toggleViva(this)">
         <div class="viva-question">
           <span class="viva-category" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo);">API</span>
-          <span class="viva-q-text">Explain how FutureBuilder handles the 3 asynchronous lifecycle states.</span>
+          <span class="viva-q-text">Sir: "FutureBuilder API calling mein kis tarah kaam kar raha hai?"</span>
           <span class="viva-arrow">▼</span>
         </div>
         <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, <code>FutureBuilder</code> inspects <code>AsyncSnapshot</code>:
-          <br>1. <code>snapshot.connectionState == ConnectionState.waiting</code>: API request is in-flight; we display <code>CircularProgressIndicator()</code>.
-          <br>2. <code>snapshot.hasError</code>: Network request failed (e.g. 404, 500, or no Wi-Fi); we display the error and a Retry button.
-          <br>3. <code>snapshot.hasData</code>: Successful 200 OK response; we pass <code>snapshot.data</code> directly into <code>ListView.builder</code>."
-        </div>
-      </div>
-
-      <div class="viva-card" onclick="toggleViva(this)">
-        <div class="viva-question">
-          <span class="viva-category" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo);">API</span>
-          <span class="viva-q-text">Why must jsonDecode(response.body) be used before mapping to Dart models?</span>
-          <span class="viva-arrow">▼</span>
-        </div>
-        <div class="viva-answer">
-          <strong>Direct Answer:</strong> "Sir, <code>response.body</code> is a raw string of bytes received across the network. <code>jsonDecode()</code> parses that string into dynamic Dart Maps or Lists, which we then pass into our strongly-typed factory constructor <code>SafetyBulletin.fromJson(item)</code> to avoid runtime type errors."
+          <strong>Roman Urdu Jawab:</strong> "Sir, <code>FutureBuilder</code> <code>http.get()</code> ke response ko monitor karta hai aur 3 conditions handle karta hai:
+          <br>1. <code>ConnectionState.waiting</code>: Jab tak request chal rahi ho tab tak <code>CircularProgressIndicator</code> dikhata hai.
+          <br>2. <code>snapshot.hasError</code>: Agar internet na ho ya server error aaye toh error message render karta hai.
+          <br>3. <code>snapshot.hasData</code>: Response milte hi <code>jsonDecode</code> shuda data ko <code>ListView.builder</code> mein display kar deta hai."
         </div>
       </div>
 
     </section>
 
-    <!-- TAB 3: PRESENTATION PITCH -->
+    <!-- TAB 3: PITCH (ROMAN URDU) -->
     <section id="tab-pitch" class="tab-content">
       <div class="pitch-box">
-        <h2 style="font-size: 1.5rem; margin-bottom: 8px; color: var(--accent-green);">🎙️ The 2-Minute Winning Presentation Script</h2>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">When Sir calls you to his desk, follow this exact 5-step walkthrough to demonstrate your work smoothly and secure maximum marks before other students present.</p>
+        <h2 style="font-size: 1.4rem; margin-bottom: 6px; color: var(--accent-green);">🎙️ Sir Ke Samne 1-Minute Live Presentation Script</h2>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px;">Jab Sir bulayein toh exact yeh 4 baatein boleinge aur aapka viva 100% full marks ke sath complete ho jayega:</p>
 
         <div class="pitch-step">
           <div class="pitch-num">1</div>
           <div class="pitch-content">
-            <h4>Introduce Scenario & Problem Domain</h4>
-            <p>Tell the professor what the app does and highlight that it is an enterprise fleet logistics ledger:</p>
+            <h4>Pehle Scenario Batayein (15 Seconds)</h4>
             <div class="pitch-quote">
-              "Sir, my project is <strong>AeroFleet</strong> — a commercial vehicle fleet and maintenance dispatch system. It manages carrier units, monitors odometer mileage and fuel levels, and syncs live highway transit safety advisories."
+              "Sir, mera project hai <strong>Creator Studio</strong> — Content Creators (YouTube, TikTok, Instagram) ke posts aur views track karne ka dashboard."
             </div>
           </div>
         </div>
@@ -872,10 +719,9 @@
         <div class="pitch-step">
           <div class="pitch-num">2</div>
           <div class="pitch-content">
-            <h4>Demonstrate SharedPreferences & Named Routes</h4>
-            <p>Show the automatic session gating and named route navigation:</p>
+            <h4>SharedPreferences Show Karein (15 Seconds)</h4>
             <div class="pitch-quote">
-              "When the app starts, <strong>AuthGate</strong> checks <code>SharedPreferences</code> for an existing login session. Because the officer is authorized, it navigates via named route <code>'/dashboard'</code>. Here we see live metrics. If I logout from Settings, SharedPreferences clears and redirects to <code>'/login'</code> using <code>pushReplacementNamed</code>."
+              "Sir, AppBar mein creator ka channel name <strong>SharedPreferences</strong> se persistent save hota hai. Agar main is edit icon ko click karke naya naam save karoon, toh woh SharedPreferences mein store ho jata hai."
             </div>
           </div>
         </div>
@@ -883,10 +729,9 @@
         <div class="pitch-step">
           <div class="pitch-num">3</div>
           <div class="pitch-content">
-            <h4>Demonstrate Provider & SQFLite CRUD</h4>
-            <p>Show adding, updating, and deleting a vehicle:</p>
+            <h4>SQFLite + Provider + ListView Dikhein (20 Seconds)</h4>
             <div class="pitch-quote">
-              "Sir, on the Vehicle Registry screen, all data is loaded from <strong>SQFLite</strong> through our singleton <code>DatabaseHelper</code>. State is managed reactively via <code>FleetProvider</code>. When I tap 'Register Vehicle' and add a unit, Provider updates SQLite and calls <code>notifyListeners()</code> — updating the dashboard counters instantly without needing setState."
+              "Sir, yeh list <code>ListView.builder</code> se banayi hai aur tamam posts <strong>SQFLite</strong> database se load ho rahi hain. State ko <strong>Provider</strong> manage kar raha hai. Dekhein jab main '+' dabakar naya video post add karta hoon, toh SQLite mein insert hone ke sath sath <code>notifyListeners()</code> ki madad se Total Uploads aur Total Views bina setState ke update ho jate hain."
             </div>
           </div>
         </div>
@@ -894,21 +739,9 @@
         <div class="pitch-step">
           <div class="pitch-num">4</div>
           <div class="pitch-content">
-            <h4>Show ListView and GridView Toggle</h4>
-            <p>Tap the AppBar view toggle icon:</p>
+            <h4>Named Route Aur REST API Dikhayein (10 Seconds)</h4>
             <div class="pitch-quote">
-              "For collection widgets, I implemented both <code>ListView.builder</code> and <code>GridView.builder</code>. With one tap on the AppBar action button, Provider toggles <code>isGridView</code>, instantly switching between detailed inspection rows and 2-column responsive grid tiles."
-            </div>
-          </div>
-        </div>
-
-        <div class="pitch-step">
-          <div class="pitch-num">5</div>
-          <div class="pitch-content">
-            <h4>Demonstrate REST API Client</h4>
-            <p>Navigate to the live highway feed screen:</p>
-            <div class="pitch-quote">
-              "Finally, in the Highway Safety Feed, we consume an external REST API using <code>http.get()</code> and <code>FutureBuilder</code>. It handles loading states, error handling, and displays verified bulletins with pull-to-refresh."
+              "Aur sir, top icon dabane se <strong>Named Route</strong> <code>'/trends'</code> khulta hai jahan hum <strong>REST API</strong> se live ideas <code>FutureBuilder</code> ke zariye fetch kar rahay hain."
             </div>
           </div>
         </div>
@@ -918,41 +751,31 @@
 
     <!-- TAB 4: CODE VAULT -->
     <section id="tab-code" class="tab-content">
-      <div style="margin-bottom: 20px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 6px;">💻 Code Repository (Stored in <code>open_ended_lab/</code>)</h2>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">All files are cleanly structured with <strong>ZERO comments</strong>, matching professional coding standards without any AI giveaways.</p>
+      <div style="margin-bottom: 16px;">
+        <h2 style="font-size: 1.4rem; margin-bottom: 4px;">💻 Clean Dart Code (No Comments)</h2>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">Yeh code <code>open_ended_lab/lib/</code> mein mojood hai. Isme koi comments nahi hain.</p>
       </div>
 
-      <!-- File 1: all_in_one_runnable.dart -->
+      <!-- File: db_helper.dart -->
       <div class="code-container">
         <div class="code-header">
-          <span>📁 open_ended_lab/lib/all_in_one_runnable.dart (Complete Standalone App)</span>
-          <button class="btn-copy" onclick="copyCode('code-all')">Copy All Code</button>
-        </div>
-        <pre><code id="code-all">// Click Copy button to copy the complete consolidated single-file runnable solution
-// Located at: open_ended_lab/lib/all_in_one_runnable.dart
-// Contains: Models, SQLite Helper, Provider, REST API Service, Named Routes, ListView/GridView</code></pre>
-      </div>
-
-      <!-- File 2: Database Helper -->
-      <div class="code-container">
-        <div class="code-header">
-          <span>📁 open_ended_lab/lib/database/database_helper.dart (SQLite Engine)</span>
+          <span>📁 open_ended_lab/lib/database/db_helper.dart (SQLite Engine)</span>
           <button class="btn-copy" onclick="copyCode('code-db')">Copy Code</button>
         </div>
-        <pre><code id="code-db">import 'package:sqflite/sqflite.dart';
+        <pre><code id="code-db">import 'package:flutter/foundation.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import '../models/vehicle.dart';
+import '../models/content_item.dart';
 
-class DatabaseHelper {
-  static final DatabaseHelper instance = DatabaseHelper._init();
+class DBHelper {
+  static final DBHelper instance = DBHelper._init();
   static Database? _database;
 
-  DatabaseHelper._init();
+  DBHelper._init();
 
   Future&lt;Database&gt; get database async {
     if (_database != null) return _database!;
-    _database = await _initDB('fleet_manager.db');
+    _database = await _initDB('content_creator.db');
     return _database!;
   }
 
@@ -969,43 +792,30 @@ class DatabaseHelper {
 
   Future _createDB(Database db, int version) async {
     await db.execute('''
-      CREATE TABLE vehicles (
+      CREATE TABLE contents (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        plateNumber TEXT NOT NULL,
-        modelName TEXT NOT NULL,
-        vehicleType TEXT NOT NULL,
-        mileage INTEGER NOT NULL,
-        fuelLevel INTEGER NOT NULL,
-        status TEXT NOT NULL
+        title TEXT NOT NULL,
+        platform TEXT NOT NULL,
+        views INTEGER NOT NULL
       )
     ''');
   }
 
-  Future&lt;int&gt; insertVehicle(Vehicle vehicle) async {
+  Future&lt;int&gt; insertContent(ContentItem item) async {
     final db = await database;
-    return await db.insert('vehicles', vehicle.toMap());
+    return await db.insert('contents', item.toMap());
   }
 
-  Future&lt;List&lt;Vehicle&gt;&gt; getAllVehicles() async {
+  Future&lt;List&lt;ContentItem&gt;&gt; getContents() async {
     final db = await database;
-    final result = await db.query('vehicles', orderBy: 'id DESC');
-    return result.map((map) =&gt; Vehicle.fromMap(map)).toList();
+    final result = await db.query('contents', orderBy: 'id DESC');
+    return result.map((map) =&gt; ContentItem.fromMap(map)).toList();
   }
 
-  Future&lt;int&gt; updateVehicle(Vehicle vehicle) async {
-    final db = await database;
-    return await db.update(
-      'vehicles',
-      vehicle.toMap(),
-      where: 'id = ?',
-      whereArgs: [vehicle.id],
-    );
-  }
-
-  Future&lt;int&gt; deleteVehicle(int id) async {
+  Future&lt;int&gt; deleteContent(int id) async {
     final db = await database;
     return await db.delete(
-      'vehicles',
+      'contents',
       where: 'id = ?',
       whereArgs: [id],
     );
@@ -1013,134 +823,86 @@ class DatabaseHelper {
 }</code></pre>
       </div>
 
-      <!-- File 3: Fleet Provider -->
+      <!-- File: content_provider.dart -->
       <div class="code-container">
         <div class="code-header">
-          <span>📁 open_ended_lab/lib/providers/fleet_provider.dart (Provider Engine)</span>
+          <span>📁 open_ended_lab/lib/providers/content_provider.dart (Provider Engine)</span>
           <button class="btn-copy" onclick="copyCode('code-prov')">Copy Code</button>
         </div>
         <pre><code id="code-prov">import 'package:flutter/material.dart';
-import '../database/database_helper.dart';
-import '../models/vehicle.dart';
+import '../database/db_helper.dart';
+import '../models/content_item.dart';
 
-class FleetProvider extends ChangeNotifier {
-  final DatabaseHelper _dbHelper = DatabaseHelper.instance;
+class ContentProvider extends ChangeNotifier {
+  final DBHelper _dbHelper = DBHelper.instance;
 
-  List&lt;Vehicle&gt; _vehicles = [];
+  List&lt;ContentItem&gt; _contents = [];
   bool _isLoading = false;
-  bool _isGridView = false;
-  String _searchQuery = '';
-  String _statusFilter = 'All';
 
-  List&lt;Vehicle&gt; get vehicles {
-    return _vehicles.where((vehicle) {
-      final matchesSearch = vehicle.plateNumber.toLowerCase().contains(_searchQuery.toLowerCase()) ||
-          vehicle.modelName.toLowerCase().contains(_searchQuery.toLowerCase()) ||
-          vehicle.vehicleType.toLowerCase().contains(_searchQuery.toLowerCase());
-      final matchesStatus = _statusFilter == 'All' || vehicle.status == _statusFilter;
-      return matchesSearch && matchesStatus;
-    }).toList();
-  }
-
+  List&lt;ContentItem&gt; get contents =&gt; _contents;
   bool get isLoading =&gt; _isLoading;
-  bool get isGridView =&gt; _isGridView;
-  String get statusFilter =&gt; _statusFilter;
+  int get totalVideos =&gt; _contents.length;
+  int get totalViews =&gt; _contents.fold(0, (sum, item) =&gt; sum + item.views);
 
-  int get totalCount =&gt; _vehicles.length;
-  int get activeCount =&gt; _vehicles.where((v) =&gt; v.status == 'Active').length;
-  int get maintenanceCount =&gt; _vehicles.where((v) =&gt; v.status == 'Maintenance').length;
-  int get groundedCount =&gt; _vehicles.where((v) =&gt; v.status == 'Grounded').length;
-
-  Future&lt;void&gt; loadVehicles() async {
+  Future&lt;void&gt; loadContents() async {
     _isLoading = true;
     notifyListeners();
-    _vehicles = await _dbHelper.getAllVehicles();
+
+    _contents = await _dbHelper.getContents();
     _isLoading = false;
     notifyListeners();
   }
 
-  Future&lt;void&gt; addVehicle(Vehicle vehicle) async {
-    await _dbHelper.insertVehicle(vehicle);
-    await loadVehicles();
+  Future&lt;void&gt; addContent(ContentItem item) async {
+    await _dbHelper.insertContent(item);
+    await loadContents();
   }
 
-  Future&lt;void&gt; updateVehicle(Vehicle vehicle) async {
-    await _dbHelper.updateVehicle(vehicle);
-    await loadVehicles();
-  }
-
-  Future&lt;void&gt; deleteVehicle(int id) async {
-    await _dbHelper.deleteVehicle(id);
-    await loadVehicles();
-  }
-
-  void toggleViewMode() {
-    _isGridView = !_isGridView;
-    notifyListeners();
-  }
-
-  void setStatusFilter(String status) {
-    _statusFilter = status;
-    notifyListeners();
-  }
-
-  void setSearchQuery(String query) {
-    _searchQuery = query;
-    notifyListeners();
+  Future&lt;void&gt; deleteContent(int id) async {
+    await _dbHelper.deleteContent(id);
+    await loadContents();
   }
 }</code></pre>
       </div>
 
-      <!-- File 4: Main with Named Routes -->
+      <!-- File: main.dart -->
       <div class="code-container">
         <div class="code-header">
-          <span>📁 open_ended_lab/lib/main.dart (Named Routes & Injection)</span>
+          <span>📁 open_ended_lab/lib/main.dart (Root & Named Routes)</span>
           <button class="btn-copy" onclick="copyCode('code-main')">Copy Code</button>
         </div>
         <pre><code id="code-main">import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'providers/fleet_provider.dart';
-import 'screens/auth_gate.dart';
-import 'screens/login_screen.dart';
-import 'screens/dashboard_screen.dart';
-import 'screens/vehicle_list_screen.dart';
-import 'screens/add_edit_vehicle_screen.dart';
-import 'screens/api_bulletin_screen.dart';
-import 'screens/settings_screen.dart';
+import 'providers/content_provider.dart';
+import 'screens/content_dashboard_screen.dart';
+import 'screens/api_trends_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) =&gt; FleetProvider()),
-      ],
-      child: const FleetApp(),
+    ChangeNotifierProvider(
+      create: (_) =&gt; ContentProvider(),
+      child: const CreatorApp(),
     ),
   );
 }
 
-class FleetApp extends StatelessWidget {
-  const FleetApp({super.key});
+class CreatorApp extends StatelessWidget {
+  const CreatorApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AeroFleet Dispatcher',
+      title: 'Creator Studio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) =&gt; const AuthGate(),
-        '/login': (context) =&gt; const LoginScreen(),
-        '/dashboard': (context) =&gt; const DashboardScreen(),
-        '/vehicles': (context) =&gt; const VehicleListScreen(),
-        '/add_vehicle': (context) =&gt; const AddEditVehicleScreen(),
-        '/api_advisories': (context) =&gt; const ApiBulletinScreen(),
-        '/settings': (context) =&gt; const SettingsScreen(),
+        '/': (context) =&gt; const ContentDashboardScreen(),
+        '/trends': (context) =&gt; const ApiTrendsScreen(),
       },
     );
   }
@@ -1151,7 +913,7 @@ class FleetApp extends StatelessWidget {
 
   </div>
 
-  <div id="toast">Code copied to clipboard!</div>
+  <div id="toast">Copied to clipboard!</div>
 
   <script>
     function togglePaperMode() {
@@ -1174,14 +936,8 @@ class FleetApp extends StatelessWidget {
     }
 
     function copyCode(elementId) {
-      let text = '';
-      if (elementId === 'code-all') {
-        text = `File location: open_ended_lab/lib/all_in_one_runnable.dart`;
-      } else {
-        const el = document.getElementById(elementId);
-        text = el.textContent;
-      }
-      navigator.clipboard.writeText(text).then(() => {
+      const el = document.getElementById(elementId);
+      navigator.clipboard.writeText(el.textContent).then(() => {
         showToast('Code copied to clipboard!');
       });
     }
