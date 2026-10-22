@@ -1,3 +1,5 @@
+// Data model for content posts (id, title, platform, views count)
+
 class ContentItem {
   final int? id;
   final String title;
