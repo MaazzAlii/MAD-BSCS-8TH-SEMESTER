@@ -1,3 +1,5 @@
+// REST API screen fetching trend ideas from jsonplaceholder api using http.get
+// Uses FutureBuilder with circular progress indicator and ListView.builder for data
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
