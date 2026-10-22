@@ -1,3 +1,5 @@
+// Main app entry point, sets up Provider state management and screen navigations routes
+// Initial route opens content dashboard screen and /trends route for api screen
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/content_provider.dart';
