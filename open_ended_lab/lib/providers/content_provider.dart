@@ -1,3 +1,5 @@
+// Provider state managment using ChangeNotifier for real time ui updates
+// Calculates total videos and views and calls notifyListeners on db changes
 import 'package:flutter/material.dart';
 import '../database/db_helper.dart';
 import '../models/content_item.dart';
