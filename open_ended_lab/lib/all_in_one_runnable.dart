@@ -1,3 +1,5 @@
+// Standalone all in one runnable backup file with model, db helper, provider and screens combined
+// Can be run direct with: flutter run -t lib/all_in_one_runnable.dart
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
