@@ -1,3 +1,5 @@
+// Main dashboard screen with shared preferences for creator name and stats cards
+// Uses ListView.builder to display sqlite posts with delete and add dialog form
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
