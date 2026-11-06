@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAD BSCS 8th Semester • Exam Scenario Rescue & Topper Guide (Roman Urdu)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0f1d;
+      --bg-card: #111827;
+      --bg-card-hover: #172138;
+      --bg-code: #0b1120;
+      --border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      --accent-blue: #38bdf8;
+      --accent-green: #34d399;
+      --accent-amber: #fbbf24;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      --accent-indigo: #6366f1;
+
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    }
+
+    body.light-mode {
+      --bg-dark: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --bg-code: #0f172a;
+      --border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --accent-blue: #0284c7;
+      --accent-green: #059669;
+      --accent-amber: #d97706;
+      --accent-purple: #7c3aed;
+      --accent-indigo: #4338ca;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
+      padding-bottom: 120px;
+    }
+
+    /* Top Sticky Bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 29, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    body.light-mode .top-bar {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #10b981, #0284c7);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-action {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 7px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-action:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+    }
+    .btn-action.primary {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: white;
+      border: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* Celebration Banner */
+    .congrats-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(56, 189, 248, 0.1));
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+    }
+    .congrats-icon {
+      font-size: 2.4rem;
+      flex-shrink: 0;
+    }
+    .congrats-text h3 {
+      color: var(--accent-green);
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .congrats-text p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.08));
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .key-point-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .key-point-card .icon {
+      font-size: 1.6rem;
+    }
+    .key-point-card .title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+    .key-point-card .desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Fast Question Finder Interactive Tool */
+    .interactive-finder {
+      background: var(--bg-card);
+      border: 2px solid var(--accent-indigo);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 35px;
+      box-shadow: var(--card-shadow);
+    }
+    .finder-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .finder-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+    }
+    .finder-controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: var(--accent-indigo);
+      color: white;
+      border-color: var(--accent-indigo);
+    }
+
+    .search-box {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .search-box:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Table of Contents Sticky / Navigation Bar */
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .tab-btn.active {
+      color: var(--accent-blue);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* Content Cards & Sections */
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 36px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .section-title .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-blue);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--card-shadow);
+      transition: border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .card.highlight {
+      border-left: 5px solid var(--accent-amber);
+    }
+    .card.life-saver {
+      border-left: 5px solid var(--accent-green);
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.04), transparent);
+    }
+
+    /* Explanation Boxes in Roman Urdu */
+    .explanation-urdu {
+      background: rgba(245, 158, 11, 0.07);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.65;
+    }
+    .explanation-urdu h4 {
+      color: var(--accent-amber);
+      font-size: 1rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scenario-trigger {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px dashed rgba(56, 189, 248, 0.35);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .scenario-trigger .tag {
+      background: var(--accent-blue);
+      color: #0b1120;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .scenario-trigger p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    /* Code Blocks */
+    .code-container {
+      background: var(--bg-code);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+    .code-header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: 'Fira Code', monospace;
+    }
+    .code-header .lang-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+    .btn-copy:hover {
+      background: var(--accent-blue);
+      color: #0b1120;
+      border-color: var(--accent-blue);
+    }
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #e2e8f0;
+    }
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    .kw { color: #f43f5e; font-weight: 600; } /* Keyword */
+    .type { color: #38bdf8; } /* Type */
+    .str { color: #34d399; } /* String */
+    .num { color: #fbbf24; } /* Number */
+    .comm { color: #64748b; font-style: italic; } /* Comment */
+    .fn { color: #a855f7; } /* Function */
+
+    /* Universal Skeleton Slot Visualization */
+    .slot-visualizer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .slot-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      position: relative;
+    }
+    .slot-num {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+    .slot-card h5 {
+      color: var(--accent-amber);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .slot-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Comparison & Strategy Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background: rgba(0, 0, 0, 0.25);
+      color: var(--accent-blue);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* 3-Day Countdown Planner */
+    .day-planner {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .day-box {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .day-badge {
+      background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+      color: white;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .day-content h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--accent-blue);
+    }
+    .day-content ul {
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .day-content ul li {
+      margin-bottom: 4px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: none;
+      z-index: 1000;
+      animation: fadeInOut 2.5s forwards;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(10px); }
+      15% { opacity: 1; transform: translateY(0); }
+      85% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(10px); }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .top-bar, .interactive-finder, .btn-action, .btn-copy, .tab-bar {
+        display: none !important;
+      }
+      .card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        background: white !important;
+      }
+      pre {
+        background: #f1f5f9 !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">🚀</div>
+      <div>
+        <span>MAD Exam Rescue Guide</span>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: normal;">BSCS 8th Semester • University Scenario Master</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-action" onclick="toggleTheme()" id="themeBtn">🌓 Light/Dark</button>
+      <button class="btn-action" onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a href="#skeleton" class="btn-action primary">⭐ 70% Universal Boilerplate</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Celebration Banner for User's 15/15 Marks -->
+    <div class="congrats-banner">
+      <div class="congrats-icon">🎉</div>
+      <div class="congrats-text">
+        <h3>Mubarak Ho! 15 / 15 Marks in Open-Ended Lab Viva!</h3>
+        <p>Aapne viva mein full marks score kar ke prove kar diya ke aap concepts samajhte hain. Ab final exam mein 3-4 days hain. Written paper ya scenario question dekh kar nervous hone ki bilkul zaroorat nahi hai. Yeh guide aapko har scenario ka <strong>guaranteed rescue formula</strong> degi taake paper mein ek lafz bhi blank na chhorna pare!</p>
+      </div>
+    </div>
+
+    <!-- Hero Header -->
+    <section class="hero">
+      <span class="badge-pill">🛡️ The "Never Leave Blank" Exam Formula</span>
+      <h1>Paper Pass Karne Aur Top Karne Ka Secret Formula</h1>
+      <p>University examiners code compiler nahi hote. Woh paper mein <strong>Flutter Architecture, Class Structure, Widget Tree aur Core Logic</strong> ke steps dekhte hain. Agar aapko scenario ka pura code na bhi aaye, yeh 70% Universal Boilerplate aur Plug-and-Play Slots likhne se aapko 70-80% marks guaranteed milte hain!</p>
+      
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <div class="icon">🧱</div>
+          <div>
+            <div class="title">70% Code Is Repeatable</div>
+            <div class="desc">Har question mein same import, main, MaterialApp, Scaffold aata hai.</div>
+          </div>
+        </div>
+        <div class="key-point-card">
+          <div class="icon">🎯</div>
+          <div>
+            <div class="title">4 Slots Formula</div>
+            <div class="desc">Sirf 4 cheezein badalni hoti hain: Variables, Functions, UI, Button.</div>
+          </div>
+        </div>
+        <div class="key-point-card">
+          <div class="icon">👶</div>
+          <div>
+            <div class="title">Bachon Wala Style (Urdu)</div>
+            <div class="desc">"Agar yeh poocha jaye to yeh likhna hai" — Seedha, asaan guide.</div>
+          </div>
+        </div>
+        <div class="key-point-card">
+          <div class="icon">📅</div>
+          <div>
+            <div class="title">3-Day Rapid Practice</div>
+            <div class="desc">3 din mein daily 2 ghante practice kar ke paper topper banen.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fast Question Finder Interactive Tool -->
+    <section class="interactive-finder">
+      <div class="finder-header">
+        <div class="finder-title">
+          <span>🔍</span> Scenario Matcher ("Sawal Kya Aaya Hai?")
+        </div>
+        <div class="finder-controls">
+          <button class="filter-chip active" onclick="filterScenarios('all')">Sab Scenarios</button>
+          <button class="filter-chip" onclick="filterScenarios('state')">State & Counter</button>
+          <button class="filter-chip" onclick="filterScenarios('form')">Form & Validation</button>
+          <button class="filter-chip" onclick="filterScenarios('list')">List & Grid</button>
+          <button class="filter-chip" onclick="filterScenarios('nav')">Navigation</button>
+          <button class="filter-chip" onclick="filterScenarios('storage')">SharedPrefs & DB</button>
+          <button class="filter-chip" onclick="filterScenarios('provider')">Provider</button>
+        </div>
+      </div>
+      <input type="text" id="scenarioSearch" class="search-box" placeholder="Type keyword (e.g. login, counter, database, list, provider, navigate, save, cart)..." oninput="searchCards()">
+      <div style="font-size: 0.85rem; color: var(--text-muted);">
+        💡 <em>Exam hall mein question paper par jo key words nazar aayen, yahan search karen aur dekhein kaunsa code likhna hai.</em>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchSection('universal')">⭐ 1. Universal Life-Saver Skeleton</button>
+      <button class="tab-btn" onclick="switchSection('scenarios')">🧩 2. Scenario-wise Cheat Sheets</button>
+      <button class="tab-btn" onclick="switchSection('provider-db')">💾 3. Provider & SQLite Templates</button>
+      <button class="tab-btn" onclick="switchSection('rules')">✍️ 4. Examiner Psychology & Marks Hacks</button>
+      <button class="tab-btn" onclick="switchSection('planner')">📅 5. 3-Day Daily Routine Plan</button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: THE UNIVERSAL LIFE-SAVER SKELETON -->
+    <!-- ========================================================================= -->
+    <div id="section-universal" class="guide-section">
+      
+      <div class="section-title">
+        <span>⭐ The Universal Life-Saver Skeleton (Har Question Mein Yeh Pehle Likhein)</span>
+        <span class="badge">70% Repeatable Code</span>
+      </div>
+
+      <div class="card life-saver" id="skeleton">
+        <h3>🏆 Golden Rule: "Kabhi Blank Page Mat Chhorna!"</h3>
+        <p>Agar exam mein examiner aisa scenario de de jo aapko 0% samajh aa raha ho, tab bhi <strong>aap paper par yeh code likh kar aayenge</strong>. Is ek code ke andar pura Flutter widget tree exist karta hai. Examiner dekh kar bolay ga: <em>"Student knows Flutter Architecture!"</em> Aur aapko 10 mein se 6-7 marks mil jayenge.</p>
+
+        <div class="explanation-urdu">
+          <h4>👶 Bachay Ki Tarah Samajhye (Line-by-Line Roman Urdu):</h4>
+          <ol style="margin-left: 20px;">
+            <li><strong>Line 1: <code>import 'package:flutter/material.dart';</code></strong> — Flutter ke button, text, colors sab is ek file se aate hain. Yeh har paper mein sabse pehli line hogi!</li>
+            <li><strong>Line 2: <code>void main() => runApp(const MyApp());</code></strong> — App ka start button. Jaise C++/Java mein <code>main()</code> hota hai.</li>
+            <li><strong>Line 3: <code>class MyApp extends StatelessWidget</code></strong> — App ka root. Iske andar <code>MaterialApp</code> hota hai jo puri application ko handle karta hai.</li>
+            <li><strong>Line 4: <code>class ExamScreen extends StatefulWidget</code></strong> — Agar screen par koi bhi number barhna hai, user ka input lena hai, ya button dabane se kuch badalna hai, toh StatefulWidget likhna lazmi hai.</li>
+            <li><strong>Line 5: <code>class _ExamScreenState extends State&lt;ExamScreen&gt;</code></strong> — Iske andar 4 slots hain:
+              <br>• <strong>Slot 1 (Variables):</strong> Data store karne ke liye (e.g. <code>int count = 0;</code>).
+              <br>• <strong>Slot 2 (Logic Functions):</strong> Button dabane par kya hoga (e.g. <code>setState(() { ... })</code>).
+              <br>• <strong>Slot 3 (Scaffold Frame):</strong> Screen ki chhat (AppBar) aur jism (Body).
+              <br>• <strong>Slot 4 (Widgets Tree):</strong> Text, Buttons, TextFields jo screen par dikhte hain.
+            </li>
+          </ol>
+        </div>
+
+        <div class="slot-visualizer">
+          <div class="slot-card">
+            <span class="slot-num">Slot 1</span>
+            <h5>🔴 Variables</h5>
+            <p>Numbers, strings, controllers jo user data hold karte hain.</p>
+          </div>
+          <div class="slot-card">
+            <span class="slot-num">Slot 2</span>
+            <h5>🔴 Functions / Logic</h5>
+            <p><code>setState(() { ... })</code> ya calculation methods.</p>
+          </div>
+          <div class="slot-card">
+            <span class="slot-num">Slot 3</span>
+            <h5>🔴 Display UI</h5>
+            <p><code>Text</code>, <code>TextField</code>, <code>Card</code>, ya <code>ListView</code>.</p>
+          </div>
+          <div class="slot-card">
+            <span class="slot-num">Slot 4</span>
+            <h5>🔴 Action Buttons</h5>
+            <p><code>ElevatedButton</code>, <code>IconButton</code>, <code>FloatingActionButton</code>.</p>
+          </div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>📄</span> universal_exam_skeleton.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="comm">// ============================================================================</span>
+<span class="comm">// 🟢 UNIVERSAL EXAM SKELETON (Memorize This! Write this for ANY UI Question)</span>
+<span class="comm">// ============================================================================</span>
+<span class="kw">import</span> <span class="str">'package:flutter/material.dart'</span>;
+
+<span class="kw">void</span> <span class="fn">main</span>() => <span class="fn">runApp</span>(<span class="kw">const</span> <span class="type">MyApp</span>());
+
+<span class="kw">class</span> <span class="type">MyApp</span> <span class="kw">extends</span> <span class="type">StatelessWidget</span> {
+  <span class="kw">const</span> <span class="type">MyApp</span>({<span class="kw">super</span>.key});
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="kw">const</span> <span class="type">MaterialApp</span>(
+      debugShowCheckedModeBanner: <span class="kw">false</span>,
+      home: <span class="type">ExamScreen</span>(),
+    );
+  }
+}
+
+<span class="kw">class</span> <span class="type">ExamScreen</span> <span class="kw">extends</span> <span class="type">StatefulWidget</span> {
+  <span class="kw">const</span> <span class="type">ExamScreen</span>({<span class="kw">super</span>.key});
+
+  <span class="comm">@override</span>
+  <span class="type">State</span>&lt;<span class="type">ExamScreen</span>&gt; <span class="fn">createState</span>() => <span class="type">_ExamScreenState</span>();
+}
+
+<span class="kw">class</span> <span class="type">_ExamScreenState</span> <span class="kw">extends</span> <span class="type">State</span>&lt;<span class="type">ExamScreen</span>&gt; {
+  <span class="comm">// 🔴 [SLOT 1: VARIABLES & CONTROLLERS]</span>
+  <span class="type">String</span> titleText = <span class="str">'University Exam Solution'</span>;
+
+  <span class="comm">// 🔴 [SLOT 2: LOGIC FUNCTION]</span>
+  <span class="kw">void</span> <span class="fn">_handleAction</span>() {
+    <span class="fn">setState</span>(() {
+      <span class="comm">// Business logic yahan aayegi</span>
+    });
+  }
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(
+        title: <span class="type">Text</span>(titleText),
+        centerTitle: <span class="kw">true</span>,
+        backgroundColor: <span class="type">Colors</span>.blue,
+      ),
+      body: <span class="type">Padding</span>(
+        padding: <span class="kw">const</span> <span class="type">EdgeInsets</span>.all(<span class="num">16.0</span>),
+        child: <span class="type">Column</span>(
+          mainAxisAlignment: <span class="type">MainAxisAlignment</span>.center,
+          children: [
+            <span class="comm">// 🔴 [SLOT 3: DISPLAY WIDGETS (Text, Card, Image, etc.)]</span>
+            <span class="kw">const</span> <span class="type">Text</span>(
+              <span class="str">'Student Solution Screen'</span>,
+              style: <span class="type">TextStyle</span>(fontSize: <span class="num">20</span>, fontWeight: <span class="type">FontWeight</span>.bold),
+            ),
+            <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">20</span>),
+
+            <span class="comm">// 🔴 [SLOT 4: BUTTON / USER ACTION]</span>
+            <span class="type">ElevatedButton</span>(
+              onPressed: _handleAction,
+              child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Submit / Perform Action'</span>),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+
+        <div class="explanation-urdu" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25);">
+          <h4>💡 Exam Hall Practice Tip:</h4>
+          <p>Aaj hi ek blank paper aur pen lein. Is skeleton code ko <strong>3 dafa dekh kar likhein</strong>, aur phir <strong>2 dafa baghair dekhe likhein</strong>. Jab yeh aapke haath ki memory mein fit ho gaya, aapka 50% paper tayyar ho gaya!</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: SCENARIO-WISE CHEAT SHEETS (PLUG-AND-PLAY) -->
+    <!-- ========================================================================= -->
+    <div id="section-scenarios" class="guide-section" style="display: none;">
+
+      <div class="section-title">
+        <span>🧩 Scenario-wise Cheat Sheets ("Agar Yeh Poocha Jaye Toh Yeh Likhna")</span>
+        <span class="badge">Plug-and-Play</span>
+      </div>
+
+      <!-- SCENARIO 1: COUNTER / SETSTATE -->
+      <div class="card scenario-card" data-tags="state counter calculation">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 1</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Create an app with increment, decrement and reset buttons", "Show dynamic score keeper", "Build a counter using setState".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (Counter with <code>setState</code>)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu:</strong> 
+          <br>1. Slot 1 mein <code>int _counter = 0;</code> banayein.
+          <br>2. Slot 2 mein <code>setState(() { _counter++; });</code> likhein taake UI update ho.
+          <br>3. Slot 3 mein <code>Text('$_counter')</code> likhein.
+          <br>4. Slot 4 mein <code>ElevatedButton</code> se function call karein.
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>⚡</span> counter_setstate_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="comm">// Bas Universal Skeleton ke _ExamScreenState ke andar yeh daal dein:</span>
+<span class="kw">class</span> <span class="type">_ExamScreenState</span> <span class="kw">extends</span> <span class="type">State</span>&lt;<span class="type">ExamScreen</span>&gt; {
+  <span class="comm">// 1. Variable</span>
+  <span class="type">int</span> _counter = <span class="num">0</span>;
+
+  <span class="comm">// 2. Logic Methods (wrapped in setState)</span>
+  <span class="kw">void</span> <span class="fn">_increment</span>() => <span class="fn">setState</span>(() => _counter++);
+  <span class="kw">void</span> <span class="fn">_decrement</span>() => <span class="fn">setState</span>(() { <span class="kw">if</span> (_counter > <span class="num">0</span>) _counter--; });
+  <span class="kw">void</span> <span class="fn">_reset</span>() => <span class="fn">setState</span>(() => _counter = <span class="num">0</span>);
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Counter Screen'</span>)),
+      body: <span class="type">Center</span>(
+        child: <span class="type">Column</span>(
+          mainAxisAlignment: <span class="type">MainAxisAlignment</span>.center,
+          children: [
+            <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Current Value:'</span>, style: <span class="type">TextStyle</span>(fontSize: <span class="num">20</span>)),
+            <span class="type">Text</span>(<span class="str">'$_counter'</span>, style: <span class="kw">const</span> <span class="type">TextStyle</span>(fontSize: <span class="num">48</span>, fontWeight: <span class="type">FontWeight</span>.bold)),
+            <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">20</span>),
+            <span class="type">Row</span>(
+              mainAxisAlignment: <span class="type">MainAxisAlignment</span>.center,
+              children: [
+                <span class="type">ElevatedButton</span>(onPressed: _decrement, child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'- Dec'</span>)),
+                <span class="kw">const</span> <span class="type">SizedBox</span>(width: <span class="num">10</span>),
+                <span class="type">ElevatedButton</span>(onPressed: _reset, child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Reset'</span>)),
+                <span class="kw">const</span> <span class="type">SizedBox</span>(width: <span class="num">10</span>),
+                <span class="type">ElevatedButton</span>(onPressed: _increment, child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'+ Inc'</span>)),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 2: FORM VALIDATION & LOGIN -->
+      <div class="card scenario-card" data-tags="form validation login registration textfield">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 2</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Design a Login or Registration Form with Validation", "Check empty email and password length", "Show error message if field is blank".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (Form with <code>GlobalKey&lt;FormState&gt;</code>)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu (3 Cheezein Yad Rakhni Hain):</strong>
+          <br>1. <code>final _formKey = GlobalKey&lt;FormState&gt;();</code> (Form ka remote control).
+          <br>2. <code>TextEditingController</code> for email & password (user jo likhega wo lene ke liye).
+          <br>3. <code>TextFormField</code> ka <code>validator: (val) { if (val!.isEmpty) return 'Error'; return null; }</code>.
+          <br>4. Button par: <code>if (_formKey.currentState!.validate()) { /* success */ }</code>.
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>📋</span> form_validation_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">class</span> <span class="type">_LoginFormState</span> <span class="kw">extends</span> <span class="type">State</span>&lt;<span class="type">ExamScreen</span>&gt; {
+  <span class="comm">// 1. Form Key & Controllers</span>
+  <span class="kw">final</span> _formKey = <span class="type">GlobalKey</span>&lt;<span class="type">FormState</span>&gt;();
+  <span class="kw">final</span> _emailCtrl = <span class="type">TextEditingController</span>();
+  <span class="kw">final</span> _passCtrl = <span class="type">TextEditingController</span>();
+
+  <span class="kw">void</span> <span class="fn">_submitForm</span>() {
+    <span class="kw">if</span> (_formKey.currentState!.validate()) {
+      <span class="comm">// Agar sab valid hai:</span>
+      <span class="type">ScaffoldMessenger</span>.of(context).showSnackBar(
+        <span class="kw">const</span> <span class="type">SnackBar</span>(content: <span class="type">Text</span>(<span class="str">'Form Validated Successfully!'</span>)),
+      );
+    }
+  }
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Login & Validation'</span>)),
+      body: <span class="type">Padding</span>(
+        padding: <span class="kw">const</span> <span class="type">EdgeInsets</span>.all(<span class="num">16.0</span>),
+        child: <span class="type">Form</span>(
+          key: _formKey,
+          child: <span class="type">Column</span>(
+            children: [
+              <span class="comm">// Email Field</span>
+              <span class="type">TextFormField</span>(
+                controller: _emailCtrl,
+                decoration: <span class="kw">const</span> <span class="type">InputDecoration</span>(labelText: <span class="str">'Email Address'</span>, border: <span class="type">OutlineInputBorder</span>()),
+                validator: (val) {
+                  <span class="kw">if</span> (val == <span class="kw">null</span> || val.isEmpty) <span class="kw">return</span> <span class="str">'Please enter email'</span>;
+                  <span class="kw">if</span> (!val.contains(<span class="str">'@'</span>)) <span class="kw">return</span> <span class="str">'Enter a valid email'</span>;
+                  <span class="kw">return</span> <span class="kw">null</span>;
+                },
+              ),
+              <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">16</span>),
+
+              <span class="comm">// Password Field</span>
+              <span class="type">TextFormField</span>(
+                controller: _passCtrl,
+                obscureText: <span class="kw">true</span>,
+                decoration: <span class="kw">const</span> <span class="type">InputDecoration</span>(labelText: <span class="str">'Password'</span>, border: <span class="type">OutlineInputBorder</span>()),
+                validator: (val) {
+                  <span class="kw">if</span> (val == <span class="kw">null</span> || val.length &lt; <span class="num">6</span>) <span class="kw">return</span> <span class="str">'Password must be 6+ chars'</span>;
+                  <span class="kw">return</span> <span class="kw">null</span>;
+                },
+              ),
+              <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">20</span>),
+
+              <span class="comm">// Submit Button</span>
+              <span class="type">ElevatedButton</span>(
+                onPressed: _submitForm,
+                child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Login'</span>),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 3: LISTVIEW.BUILDER -->
+      <div class="card scenario-card" data-tags="list listview products items scroll card">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 3</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Display dynamic list of products/students/tasks", "Use ListView.builder to render items", "Show List with ListTile and delete button".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (<code>ListView.builder</code> with Card & ListTile)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu:</strong>
+          <br>1. Ek List banayein: <code>final items = ['Apple', 'Banana', 'Mango'];</code>
+          <br>2. Body mein likhein: <code>ListView.builder(...)</code>
+          <br>3. <code>itemCount: items.length,</code> (Kitne dabbe banayen)
+          <br>4. <code>itemBuilder: (context, index) => Card(child: ListTile(...))</code> (Har item ka design)
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>📜</span> listview_builder_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">class</span> <span class="type">_ListScreenState</span> <span class="kw">extends</span> <span class="type">State</span>&lt;<span class="type">ExamScreen</span>&gt; {
+  <span class="comm">// 1. Data List (Can be Products, Tasks, Students)</span>
+  <span class="kw">final</span> <span class="type">List</span>&lt;<span class="type">String</span>&gt; items = [<span class="str">'Mobile App Dev'</span>, <span class="str">'Cloud Computing'</span>, <span class="str">'Final Project'</span>, <span class="str">'Data Science'</span>];
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Items List'</span>)),
+      body: <span class="type">ListView</span>.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          <span class="kw">return</span> <span class="type">Card</span>(
+            margin: <span class="kw">const</span> <span class="type">EdgeInsets</span>.symmetric(horizontal: <span class="num">12</span>, vertical: <span class="num">6</span>),
+            elevation: <span class="num">3</span>,
+            child: <span class="type">ListTile</span>(
+              leading: <span class="type">CircleAvatar</span>(child: <span class="type">Text</span>(<span class="str">'${index + 1}'</span>)),
+              title: <span class="type">Text</span>(items[index], style: <span class="kw">const</span> <span class="type">TextStyle</span>(fontWeight: <span class="type">FontWeight</span>.bold)),
+              subtitle: <span class="type">Text</span>(<span class="str">'Subtitle for item ${index + 1}'</span>),
+              trailing: <span class="type">IconButton</span>(
+                icon: <span class="kw">const</span> <span class="type">Icon</span>(<span class="type">Icons</span>.delete, color: <span class="type">Colors</span>.red),
+                onPressed: () {
+                  <span class="fn">setState</span>(() {
+                    items.removeAt(index); <span class="comm">// Delete item dynamically</span>
+                  });
+                },
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 4: NAVIGATION & PASSING DATA -->
+      <div class="card scenario-card" data-tags="nav navigation screens route pass data">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 4</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Navigate from Screen A to Screen B", "Pass data/username to Details Screen", "Go back using back button".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (<code>Navigator.push</code> & <code>Navigator.pop</code>)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu:</strong>
+          <br>• Screen 1 se Screen 2 par jaane ke liye:
+          <br><code>Navigator.push(context, MaterialPageRoute(builder: (context) => Screen2(data: 'Value')));</code>
+          <br>• Wapis pehli screen par aane ke liye:
+          <br><code>Navigator.pop(context);</code>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>🔀</span> navigation_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="comm">// ================= SCREEN 1: FIRST SCREEN =================</span>
+<span class="kw">class</span> <span class="type">FirstScreen</span> <span class="kw">extends</span> <span class="type">StatelessWidget</span> {
+  <span class="kw">const</span> <span class="type">FirstScreen</span>({<span class="kw">super</span>.key});
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Screen 1'</span>)),
+      body: <span class="type">Center</span>(
+        child: <span class="type">ElevatedButton</span>(
+          onPressed: () {
+            <span class="comm">// NAVIGATE & PASS DATA TO SCREEN 2:</span>
+            <span class="type">Navigator</span>.push(
+              context,
+              <span class="type">MaterialPageRoute</span>(
+                builder: (context) => <span class="kw">const</span> <span class="type">SecondScreen</span>(userName: <span class="str">'Maaz Ali'</span>),
+              ),
+            );
+          },
+          child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Go to Second Screen ➔'</span>),
+        ),
+      ),
+    );
+  }
+}
+
+<span class="comm">// ================= SCREEN 2: SECOND SCREEN (RECEIVES DATA) =================</span>
+<span class="kw">class</span> <span class="type">SecondScreen</span> <span class="kw">extends</span> <span class="type">StatelessWidget</span> {
+  <span class="kw">final</span> <span class="type">String</span> userName; <span class="comm">// Receives data from Screen 1</span>
+  <span class="kw">const</span> <span class="type">SecondScreen</span>({<span class="kw">super</span>.key, <span class="kw">required</span> <span class="kw">this</span>.userName});
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Screen 2 (Details)'</span>)),
+      body: <span class="type">Center</span>(
+        child: <span class="type">Column</span>(
+          mainAxisAlignment: <span class="type">MainAxisAlignment</span>.center,
+          children: [
+            <span class="type">Text</span>(<span class="str">'Welcome, $userName!'</span>, style: <span class="kw">const</span> <span class="type">TextStyle</span>(fontSize: <span class="num">24</span>)),
+            <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">20</span>),
+            <span class="type">ElevatedButton</span>(
+              onPressed: () => <span class="type">Navigator</span>.pop(context), <span class="comm">// GO BACK!</span>
+              child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'⬅ Back to Screen 1'</span>),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 5: SHAREDPREFERENCES (PERSISTENT DATA) -->
+      <div class="card scenario-card" data-tags="storage sharedpreferences local save session remember">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 5</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Save username in local storage", "Implement Remember Me using SharedPreferences", "Persist user login across app restart".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (<code>SharedPreferences</code> 4 Functions)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu (Sirf 3 Lines Yad Kar Lo):</strong>
+          <br>1. Instance lena: <code>final prefs = await SharedPreferences.getInstance();</code>
+          <br>2. Save karna: <code>await prefs.setString('user', name);</code>
+          <br>3. Read karna: <code>String saved = prefs.getString('user') ?? 'No Data';</code>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>💾</span> shared_preferences_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">import</span> <span class="str">'package:shared_preferences/shared_preferences.dart'</span>;
+
+<span class="kw">class</span> <span class="type">_SharedPrefsScreenState</span> <span class="kw">extends</span> <span class="type">State</span>&lt;<span class="type">ExamScreen</span>&gt; {
+  <span class="kw">final</span> _ctrl = <span class="type">TextEditingController</span>();
+  <span class="type">String</span> _savedValue = <span class="str">''</span>;
+
+  <span class="comm">@override</span>
+  <span class="kw">void</span> <span class="fn">initState</span>() {
+    <span class="kw">super</span>.initState();
+    _loadData(); <span class="comm">// App start hone par save hua data load karo</span>
+  }
+
+  <span class="comm">// SAVE DATA:</span>
+  <span class="type">Future</span>&lt;<span class="kw">void</span>&gt; <span class="fn">_saveData</span>() <span class="kw">async</span> {
+    <span class="kw">final</span> prefs = <span class="kw">await</span> <span class="type">SharedPreferences</span>.getInstance();
+    <span class="kw">await</span> prefs.setString(<span class="str">'username'</span>, _ctrl.text);
+    _loadData();
+  }
+
+  <span class="comm">// LOAD DATA:</span>
+  <span class="type">Future</span>&lt;<span class="kw">void</span>&gt; <span class="fn">_loadData</span>() <span class="kw">async</span> {
+    <span class="kw">final</span> prefs = <span class="kw">await</span> <span class="type">SharedPreferences</span>.getInstance();
+    <span class="fn">setState</span>(() {
+      _savedValue = prefs.getString(<span class="str">'username'</span>) ?? <span class="str">'No user saved yet'</span>;
+    });
+  }
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'SharedPreferences Storage'</span>)),
+      body: <span class="type">Padding</span>(
+        padding: <span class="kw">const</span> <span class="type">EdgeInsets</span>.all(<span class="num">16.0</span>),
+        child: <span class="type">Column</span>(
+          children: [
+            <span class="type">TextField</span>(controller: _ctrl, decoration: <span class="kw">const</span> <span class="type">InputDecoration</span>(labelText: <span class="str">'Enter Name'</span>)),
+            <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">12</span>),
+            <span class="type">ElevatedButton</span>(onPressed: _saveData, child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Save to SharedPreferences'</span>)),
+            <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">20</span>),
+            <span class="type">Text</span>(<span class="str">'Saved in Device Storage: $_savedValue'</span>, style: <span class="kw">const</span> <span class="type">TextStyle</span>(fontSize: <span class="num">18</span>, fontWeight: <span class="type">FontWeight</span>.bold)),
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 6: DIALOGS & SNACKBARS -->
+      <div class="card scenario-card" data-tags="dialog snackbar alert popup notification">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 6</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Show an AlertDialog box on button press", "Display SnackBar notification", "Ask user confirmation before delete".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (<code>showDialog</code> & <code>showSnackBar</code>)</h4>
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>💬</span> dialog_snackbar_snippets.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="comm">// 1. SNACKBAR CODE:</span>
+<span class="kw">void</span> <span class="fn">_showMySnackBar</span>(<span class="type">BuildContext</span> context) {
+  <span class="type">ScaffoldMessenger</span>.of(context).showSnackBar(
+    <span class="type">SnackBar</span>(
+      content: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Item deleted successfully!'</span>),
+      action: <span class="type">SnackBarAction</span>(label: <span class="str">'UNDO'</span>, onPressed: () {}),
+    ),
+  );
+}
+
+<span class="comm">// 2. ALERT DIALOG CODE:</span>
+<span class="kw">void</span> <span class="fn">_showMyDialog</span>(<span class="type">BuildContext</span> context) {
+  <span class="fn">showDialog</span>(
+    context: context,
+    builder: (ctx) => <span class="type">AlertDialog</span>(
+      title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Confirm Delete?'</span>),
+      content: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Are you sure you want to remove this item?'</span>),
+      actions: [
+        <span class="type">TextButton</span>(onPressed: () => <span class="type">Navigator</span>.pop(ctx), child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Cancel'</span>)),
+        <span class="type">ElevatedButton</span>(
+          onPressed: () {
+            <span class="type">Navigator</span>.pop(ctx);
+            <span class="fn">_showMySnackBar</span>(context);
+          },
+          child: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Yes, Delete'</span>),
+        ),
+      ],
+    ),
+  );
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 7: GRIDVIEW (TEACHER'S LAB 03 PATTERN) -->
+      <div class="card scenario-card" data-tags="grid gridview columns catalog products cards">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 7</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Display items in a 2 or 3 column Grid", "Implement GridView.builder with SliverGridDelegate", "Build an image or product gallery grid".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (Teacher's <code>GridView.builder</code> Pattern)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu:</strong>
+          <br>1. GridView ke liye sabse zaroori cheez hoti hai: <code>gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(...)</code>.
+          <br>2. <code>crossAxisCount: 2</code> ya <code>3</code> (Ek line mein kitne dabbe aayenge).
+          <br>3. <code>crossAxisSpacing: 10, mainAxisSpacing: 10</code> (Dabbo ke beech ka fasla).
+          <br>4. <code>childAspectRatio: 1</code> (Square dabba).
+          <br>5. <code>itemBuilder: (context, index) => Card(...)</code>.
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>🔲</span> gridview_builder_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">class</span> <span class="type">GridViewScreen</span> <span class="kw">extends</span> <span class="type">StatelessWidget</span> {
+  <span class="kw">const</span> <span class="type">GridViewScreen</span>({<span class="kw">super</span>.key});
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="comm">// Sample items list:</span>
+    <span class="kw">final</span> items = <span class="type">List</span>.generate(<span class="num">12</span>, (index) => <span class="str">'Product #${index + 1}'</span>);
+
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'2-Column Grid View'</span>)),
+      body: <span class="type">Padding</span>(
+        padding: <span class="kw">const</span> <span class="type">EdgeInsets</span>.all(<span class="num">12.0</span>),
+        child: <span class="type">GridView</span>.builder(
+          gridDelegate: <span class="kw">const</span> <span class="type">SliverGridDelegateWithFixedCrossAxisCount</span>(
+            crossAxisCount: <span class="num">2</span>,        <span class="comm">// 👈 2 Columns in grid</span>
+            crossAxisSpacing: <span class="num">10</span>,     <span class="comm">// 👈 Horizontal gap</span>
+            mainAxisSpacing: <span class="num">10</span>,      <span class="comm">// 👈 Vertical gap</span>
+            childAspectRatio: <span class="num">1.1</span>,    <span class="comm">// 👈 Width to Height ratio</span>
+          ),
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            <span class="kw">return</span> <span class="type">Card</span>(
+              color: <span class="type">Colors</span>.blue.shade50,
+              elevation: <span class="num">3</span>,
+              child: <span class="type">InkWell</span>(
+                onTap: () {
+                  <span class="type">ScaffoldMessenger</span>.of(context).showSnackBar(
+                    <span class="type">SnackBar</span>(content: <span class="type">Text</span>(<span class="str">'Clicked ${items[index]}'</span>)),
+                  );
+                },
+                child: <span class="type">Center</span>(
+                  child: <span class="type">Column</span>(
+                    mainAxisAlignment: <span class="type">MainAxisAlignment</span>.center,
+                    children: [
+                      <span class="kw">const</span> <span class="type">Icon</span>(<span class="type">Icons</span>.shopping_bag, size: <span class="num">40</span>, color: <span class="type">Colors</span>.blue),
+                      <span class="kw">const</span> <span class="type">SizedBox</span>(height: <span class="num">8</span>),
+                      <span class="type">Text</span>(items[index], style: <span class="kw">const</span> <span class="type">TextStyle</span>(fontWeight: <span class="type">FontWeight</span>.bold)),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SCENARIO 8: REST API & FUTUREBUILDER (LAB 03 PATTERN) -->
+      <div class="card scenario-card" data-tags="api rest http futurebuilder json fetch backend network">
+        <div class="scenario-trigger">
+          <span class="tag">Scenario 8</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Fetch data from REST API using HTTP package", "Render asynchronous response using FutureBuilder", "Handle loading, error and success states".</p>
+        </div>
+        <h4>🎯 Kya Likhna Hai? (<code>http.get</code> + <code>FutureBuilder</code>)</h4>
+        <div class="explanation-urdu">
+          <strong>Asaan Roman Urdu (FutureBuilder Ke 3 Dastoor):</strong>
+          <br>1. <code>http.get(Uri.parse('https://...'))</code> se data internet se mangwate hain.
+          <br>2. <code>FutureBuilder</code> ko future dete hain, aur builder mein 3 checks lagate hain:
+          <br>• <strong>Loading state:</strong> <code>if (snapshot.connectionState == ConnectionState.waiting) return CircularProgressIndicator();</code>
+          <br>• <strong>Error state:</strong> <code>if (snapshot.hasError) return Text('Error: ${snapshot.error}');</code>
+          <br>• <strong>Success state:</strong> <code>return ListView.builder(...)</code>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>🌐</span> api_future_builder_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">import</span> <span class="str">'dart:convert'</span>;
+<span class="kw">import</span> <span class="str">'package:flutter/material.dart'</span>;
+<span class="kw">import</span> <span class="str">'package:http/http.dart'</span> <span class="kw">as</span> http;
+
+<span class="comm">// 1. API HELPER FUNCTION</span>
+<span class="type">Future</span>&lt;<span class="type">List</span>&lt;<span class="kw">dynamic</span>&gt;&gt; <span class="fn">fetchPosts</span>() <span class="kw">async</span> {
+  <span class="kw">final</span> url = <span class="type">Uri</span>.parse(<span class="str">'https://jsonplaceholder.typicode.com/posts'</span>);
+  <span class="kw">final</span> res = <span class="kw">await</span> http.get(url);
+
+  <span class="kw">if</span> (res.statusCode == <span class="num">200</span>) {
+    <span class="kw">return</span> <span class="fn">jsonDecode</span>(res.body); <span class="comm">// List of Map</span>
+  } <span class="kw">else</span> {
+    <span class="kw">throw</span> <span class="type">Exception</span>(<span class="str">'Failed to load data'</span>);
+  }
+}
+
+<span class="comm">// 2. FUTUREBUILDER UI SCREEN</span>
+<span class="kw">class</span> <span class="type">ApiPostsScreen</span> <span class="kw">extends</span> <span class="type">StatelessWidget</span> {
+  <span class="kw">const</span> <span class="type">ApiPostsScreen</span>({<span class="kw">super</span>.key});
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'API Posts with FutureBuilder'</span>)),
+      body: <span class="type">FutureBuilder</span>&lt;<span class="type">List</span>&lt;<span class="kw">dynamic</span>&gt;&gt;(
+        future: <span class="fn">fetchPosts</span>(),
+        builder: (context, snapshot) {
+          <span class="comm">// State 1: Still loading</span>
+          <span class="kw">if</span> (snapshot.connectionState == <span class="type">ConnectionState</span>.waiting) {
+            <span class="kw">return</span> <span class="kw">const</span> <span class="type">Center</span>(child: <span class="type">CircularProgressIndicator</span>());
+          }
+          <span class="comm">// State 2: Server error</span>
+          <span class="kw">if</span> (snapshot.hasError) {
+            <span class="kw">return</span> <span class="type">Center</span>(child: <span class="type">Text</span>(<span class="str">'Error: ${snapshot.error}'</span>));
+          }
+          <span class="comm">// State 3: Data received successfully!</span>
+          <span class="kw">final</span> data = snapshot.data!;
+          <span class="kw">return</span> <span class="type">ListView</span>.builder(
+            itemCount: data.length > <span class="num">15</span> ? <span class="num">15</span> : data.length,
+            itemBuilder: (context, i) {
+              <span class="kw">return</span> <span class="type">Card</span>(
+                margin: <span class="kw">const</span> <span class="type">EdgeInsets</span>.symmetric(horizontal: <span class="num">10</span>, vertical: <span class="num">5</span>),
+                child: <span class="type">ListTile</span>(
+                  leading: <span class="type">CircleAvatar</span>(child: <span class="type">Text</span>(<span class="str">'${i + 1}'</span>)),
+                  title: <span class="type">Text</span>(data[i][<span class="str">'title'</span>] ?? <span class="str">''</span>, maxLines: <span class="num">1</span>),
+                  subtitle: <span class="type">Text</span>(data[i][<span class="str">'body'</span>] ?? <span class="str">''</span>, maxLines: <span class="num">2</span>),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: PROVIDER & SQLITE (SPECIAL ARCHITECTURES) -->
+    <!-- ========================================================================= -->
+    <div id="section-provider-db" class="guide-section" style="display: none;">
+
+      <div class="section-title">
+        <span>💾 Provider & SQLite Master Templates</span>
+        <span class="badge">Decoupled Architectures</span>
+      </div>
+
+      <!-- PROVIDER TEMPLATE -->
+      <div class="card scenario-card" data-tags="provider statemanagement changenotifier consumer">
+        <div class="scenario-trigger">
+          <span class="tag">Provider Template</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Implement state management using Provider", "Create a Cart/Counter using ChangeNotifier", "Why use Provider instead of setState?".</p>
+        </div>
+        <h4>🧠 Provider Ka Pure Concept (Roman Urdu)</h4>
+        <div class="explanation-urdu">
+          Provider ka maqsad hota hai: <strong>State ko UI se alag karna!</strong>
+          <br>Yahan <code>StatefulWidget</code> nahi banate! Yahan 3 asaan steps hain:
+          <br>1. <strong>Step 1:</strong> Ek class jo <code>ChangeNotifier</code> ko extend kare (State & <code>notifyListeners()</code>).
+          <br>2. <strong>Step 2:</strong> <code>main()</code> mein <code>ChangeNotifierProvider</code> lagayein.
+          <br>3. <strong>Step 3:</strong> UI mein <code>context.watch&lt;T&gt;()</code> se read karein aur button par <code>context.read&lt;T&gt;()</code> se function call karein!
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>📦</span> complete_provider_exam_solution.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">import</span> <span class="str">'package:flutter/material.dart'</span>;
+<span class="kw">import</span> <span class="str">'package:provider/provider.dart'</span>;
+
+<span class="comm">// ================= STEP 1: CHANGENOTIFIER MODEL CLASS =================</span>
+<span class="kw">class</span> <span class="type">CounterModel</span> <span class="kw">extends</span> <span class="type">ChangeNotifier</span> {
+  <span class="type">int</span> _count = <span class="num">0</span>;
+  <span class="type">int</span> <span class="kw">get</span> count => _count;
+
+  <span class="kw">void</span> <span class="fn">increment</span>() {
+    _count++;
+    <span class="fn">notifyListeners</span>(); <span class="comm">// 👈 Yeh UI ko bataega ke redraw ho jao!</span>
+  }
+}
+
+<span class="comm">// ================= STEP 2: WRAP APP IN CHANGENOTIFIERPROVIDER =================</span>
+<span class="kw">void</span> <span class="fn">main</span>() {
+  <span class="fn">runApp</span>(
+    <span class="type">ChangeNotifierProvider</span>(
+      create: (context) => <span class="type">CounterModel</span>(),
+      child: <span class="kw">const</span> <span class="type">MaterialApp</span>(home: <span class="type">ProviderScreen</span>()),
+    ),
+  );
+}
+
+<span class="comm">// ================= STEP 3: STATELESS UI USING PROVIDER =================</span>
+<span class="kw">class</span> <span class="type">ProviderScreen</span> <span class="kw">extends</span> <span class="type">StatelessWidget</span> {
+  <span class="kw">const</span> <span class="type">ProviderScreen</span>({<span class="kw">super</span>.key});
+
+  <span class="comm">@override</span>
+  <span class="type">Widget</span> <span class="fn">build</span>(<span class="type">BuildContext</span> context) {
+    <span class="comm">// 1. Listen to state changes:</span>
+    <span class="kw">final</span> counter = context.watch&lt;<span class="type">CounterModel</span>&gt;().count;
+
+    <span class="kw">return</span> <span class="type">Scaffold</span>(
+      appBar: <span class="type">AppBar</span>(title: <span class="kw">const</span> <span class="type">Text</span>(<span class="str">'Provider State Management'</span>)),
+      body: <span class="type">Center</span>(
+        child: <span class="type">Text</span>(<span class="str">'Count: $counter'</span>, style: <span class="kw">const</span> <span class="type">TextStyle</span>(fontSize: <span class="num">36</span>)),
+      ),
+      floatingActionButton: <span class="type">FloatingActionButton</span>(
+        onPressed: () {
+          <span class="comm">// 2. Trigger action without listening:</span>
+          context.read&lt;<span class="type">CounterModel</span>&gt;().<span class="fn">increment</span>();
+        },
+        child: <span class="kw">const</span> <span class="type">Icon</span>(<span class="type">Icons</span>.add),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- SQLITE DATABASE HELPER TEMPLATE -->
+      <div class="card scenario-card" data-tags="sqlite database crud db helper table insert query">
+        <div class="scenario-trigger">
+          <span class="tag">SQLite CRUD Template</span>
+          <p><strong>Examiner Ke الفاظ:</strong> "Write a DatabaseHelper class for SQLite", "Implement CRUD operations (Insert, Query, Update, Delete) in Flutter".</p>
+        </div>
+        <h4>🧠 SQLite Ka Singleton & 4 CRUD Methods (Roman Urdu)</h4>
+        <div class="explanation-urdu">
+          Jab bhi SQLite ka question aaye, examiner UI nahi mangta! Examiner sirf <strong>DatabaseHelper class</strong> mangta hai. Isme 4 methods fix hote hain:
+          <br>1. <code>insert(row)</code> -> <code>db.insert('table', row);</code>
+          <br>2. <code>getAll()</code> -> <code>db.query('table');</code>
+          <br>3. <code>update(row)</code> -> <code>db.update('table', row, where: 'id = ?', whereArgs: [id]);</code>
+          <br>4. <code>delete(id)</code> -> <code>db.delete('table', where: 'id = ?', whereArgs: [id]);</code>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <div class="lang-badge"><span>🗄️</span> database_helper.dart</div>
+            <button class="btn-copy" onclick="copyCode(this)">📋 Copy Code</button>
+          </div>
+          <pre><code><span class="kw">import</span> <span class="str">'package:sqflite/sqflite.dart'</span>;
+<span class="kw">import</span> <span class="str">'package:path/path.dart'</span>;
+
+<span class="kw">class</span> <span class="type">DatabaseHelper</span> {
+  <span class="comm">// 1. SINGLETON INSTANCE</span>
+  <span class="kw">static</span> <span class="kw">final</span> <span class="type">DatabaseHelper</span> instance = <span class="type">DatabaseHelper</span>._init();
+  <span class="kw">static</span> <span class="type">Database</span>? _database;
+  <span class="type">DatabaseHelper</span>._init();
+
+  <span class="type">Future</span>&lt;<span class="type">Database</span>&gt; <span class="kw">get</span> database <span class="kw">async</span> {
+    <span class="kw">if</span> (_database != <span class="kw">null</span>) <span class="kw">return</span> _database!;
+    _database = <span class="kw">await</span> _initDB(<span class="str">'students.db'</span>);
+    <span class="kw">return</span> _database!;
+  }
+
+  <span class="comm">// 2. INITIALIZE & CREATE TABLE</span>
+  <span class="type">Future</span>&lt;<span class="type">Database</span>&gt; <span class="fn">_initDB</span>(<span class="type">String</span> filePath) <span class="kw">async</span> {
+    <span class="kw">final</span> dbPath = <span class="kw">await</span> <span class="fn">getDatabasesPath</span>();
+    <span class="kw">final</span> path = <span class="fn">join</span>(dbPath, filePath);
+
+    <span class="kw">return</span> <span class="kw">await</span> <span class="fn">openDatabase</span>(path, version: <span class="num">1</span>, onCreate: (db, version) <span class="kw">async</span> {
+      <span class="kw">await</span> db.execute(<span class="str">'''
+        CREATE TABLE students (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          name TEXT NOT NULL,
+          rollNo TEXT NOT NULL
+        )
+      '''</span>);
+    });
+  }
+
+  <span class="comm">// 3. CRUD: INSERT</span>
+  <span class="type">Future</span>&lt;<span class="type">int</span>&gt; <span class="fn">insertStudent</span>(<span class="type">Map</span>&lt;<span class="type">String</span>, <span class="kw">dynamic</span>&gt; row) <span class="kw">async</span> {
+    <span class="kw">final</span> db = <span class="kw">await</span> instance.database;
+    <span class="kw">return</span> <span class="kw">await</span> db.insert(<span class="str">'students'</span>, row);
+  }
+
+  <span class="comm">// 4. CRUD: QUERY (READ ALL)</span>
+  <span class="type">Future</span>&lt;<span class="type">List</span>&lt;<span class="type">Map</span>&lt;<span class="type">String</span>, <span class="kw">dynamic</span>&gt;&gt;&gt; <span class="fn">getAllStudents</span>() <span class="kw">async</span> {
+    <span class="kw">final</span> db = <span class="kw">await</span> instance.database;
+    <span class="kw">return</span> <span class="kw">await</span> db.query(<span class="str">'students'</span>);
+  }
+
+  <span class="comm">// 5. CRUD: UPDATE</span>
+  <span class="type">Future</span>&lt;<span class="type">int</span>&gt; <span class="fn">updateStudent</span>(<span class="type">Map</span>&lt;<span class="type">String</span>, <span class="kw">dynamic</span>&gt; row) <span class="kw">async</span> {
+    <span class="kw">final</span> db = <span class="kw">await</span> instance.database;
+    <span class="kw">int</span> id = row[<span class="str">'id'</span>];
+    <span class="kw">return</span> <span class="kw">await</span> db.update(<span class="str">'students'</span>, row, where: <span class="str">'id = ?'</span>, whereArgs: [id]);
+  }
+
+  <span class="comm">// 6. CRUD: DELETE</span>
+  <span class="type">Future</span>&lt;<span class="type">int</span>&gt; <span class="fn">deleteStudent</span>(<span class="type">int</span> id) <span class="kw">async</span> {
+    <span class="kw">final</span> db = <span class="kw">await</span> instance.database;
+    <span class="kw">return</span> <span class="kw">await</span> db.delete(<span class="str">'students'</span>, where: <span class="str">'id = ?'</span>, whereArgs: [id]);
+  }
+}</code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: EXAMINER PSYCHOLOGY & PAPER WRITING RULES -->
+    <!-- ========================================================================= -->
+    <div id="section-rules" class="guide-section" style="display: none;">
+
+      <div class="section-title">
+        <span>✍️ Examiner Psychology & Marks Maximizer Rules</span>
+        <span class="badge">Paper Hacks</span>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Examiner Paper Kaise Check Karta Hai?</h3>
+        <p>Examiner ke paas 50+ bacchon ke paper hote hain. Woh ek ek semicolon nahi dekhta. Woh 4 cheezein check karta hai:</p>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Examiner Checkpoints</th>
+                <th>Aapko Kya Likhna Chahiye</th>
+                <th>Marks Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Architecture & Structure</strong></td>
+                <td><code>MaterialApp</code>, <code>StatefulWidget</code>, <code>Scaffold</code>, <code>AppBar</code></td>
+                <td><span style="color: var(--accent-green); font-weight: bold;">+3 to 4 Marks</span></td>
+              </tr>
+              <tr>
+                <td><strong>2. Layout Tree Representation</strong></td>
+                <td><code>Column(children: [...])</code> ya <code>ListView.builder</code></td>
+                <td><span style="color: var(--accent-blue); font-weight: bold;">+2 to 3 Marks</span></td>
+              </tr>
+              <tr>
+                <td><strong>3. Logic & Event Handler</strong></td>
+                <td><code>onPressed: () { setState(() { ... }); }</code></td>
+                <td><span style="color: var(--accent-amber); font-weight: bold;">+3 Marks</span></td>
+              </tr>
+              <tr>
+                <td><strong>4. Clean Formatting & Comments</strong></td>
+                <td>Har method ke ooper 1 line comment likhein (e.g. <code>// Updates the score</code>)</td>
+                <td><span style="color: var(--accent-purple); font-weight: bold;">+1 to 2 Bonus Marks</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="explanation-urdu">
+          <h4>🌟 Golden Trick: "Draw a Quick Widget Tree"</h4>
+          <p>Agar aapko kisi code ki exact syntax bhool jaye, toh code ke neeche ek chota sa <strong>Widget Tree diagram</strong> bana dein! Examiners isse <em>intehai mutasir</em> (impressed) hote hain aur full step-marking dete hain:</p>
+          <pre style="background: var(--bg-card); border-radius: 8px; padding: 12px; margin-top: 8px; color: var(--accent-green);">
+MyApp
+ └── MaterialApp
+      └── Scaffold
+           ├── AppBar (Title)
+           └── Body (Column)
+                ├── Text (Title / Counter)
+                ├── TextField (Input)
+                └── ElevatedButton (Action)
+          </pre>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5: 3-DAY RAPID PREPARATION PLAN -->
+    <!-- ========================================================================= -->
+    <div id="section-planner" class="guide-section" style="display: none;">
+
+      <div class="section-title">
+        <span>📅 3-Day Rapid Preparation Countdown Plan</span>
+        <span class="badge">Zero to Hero</span>
+      </div>
+
+      <div class="day-planner">
+        <div class="day-box">
+          <div class="day-badge">DAY 1<br><span style="font-size:0.7rem; font-weight:normal;">UI & Skeleton</span></div>
+          <div class="day-content">
+            <h4>Universal Skeleton + Counter + Form Validation</h4>
+            <ul>
+              <li><strong>Subah (1 Hour):</strong> Universal Skeleton ko blank paper par 3 baar likhein. Haath ki muscle memory banayein.</li>
+              <li><strong>Dopahar (1.5 Hours):</strong> Scenario 1 (Counter with <code>setState</code>) aur Scenario 2 (Login Form with <code>GlobalKey</code>) likhein.</li>
+              <li><strong>Shaam (1 Hour):</strong> Scenario 4 (Navigation: <code>push</code> and <code>pop</code>) ki practice karein.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="day-box">
+          <div class="day-badge">DAY 2<br><span style="font-size:0.7rem; font-weight:normal;">Lists & Storage</span></div>
+          <div class="day-content">
+            <h4>ListView.builder + SharedPreferences + Dialogs</h4>
+            <ul>
+              <li><strong>Subah (1 Hour):</strong> <code>ListView.builder</code> with Card & ListTile ko 2 baar paper par likhein.</li>
+              <li><strong>Dopahar (1.5 Hours):</strong> SharedPreferences ke 3 steps (Instance, <code>setString</code>, <code>getString</code>) ratta mar lein.</li>
+              <li><strong>Shaam (1 Hour):</strong> SnackBar aur AlertDialog ke snippets yaad kar ke likhein.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="day-box">
+          <div class="day-badge">DAY 3<br><span style="font-size:0.7rem; font-weight:normal;">Advanced & Mocks</span></div>
+          <div class="day-content">
+            <h4>Provider + SQLite + 2 Mock Papers</h4>
+            <ul>
+              <li><strong>Subah (1.5 Hours):</strong> Provider ki <code>ChangeNotifier</code> class aur <code>context.watch</code> / <code>read</code> ko samjhein.</li>
+              <li><strong>Dopahar (1 Hour):</strong> SQLite <code>DatabaseHelper</code> ke 4 CRUD methods (insert, query, update, delete) likhein.</li>
+              <li><strong>Shaam (2 Hours):</strong> Koi se 2 purane scenario questions uthaein aur time laga kar paper par pura answer sheet solve karein.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="toast">Code copied to clipboard! ✅</div>
+
+  <script>
+    // Tab switching logic
+    function switchSection(sectionId) {
+      document.querySelectorAll('.guide-section').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById('section-' + sectionId);
+      if (target) {
+        target.style.display = 'block';
+      }
+
+      event.currentTarget.classList.add('active');
+      window.scrollTo({ top: 400, behavior: 'smooth' });
+    }
+
+    // Filter Chips for Scenarios
+    function filterScenarios(category) {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      // Make sure scenarios section is open
+      switchSection('scenarios');
+
+      const cards = document.querySelectorAll('.scenario-card');
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags') || '';
+        if (category === 'all' || tags.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Search Box Logic
+    function searchCards() {
+      const q = document.getElementById('scenarioSearch').value.toLowerCase().trim();
+      
+      // Auto open scenarios if searching
+      if (q.length > 0) {
+        document.querySelectorAll('.guide-section').forEach(el => el.style.display = 'block');
+      }
+
+      const cards = document.querySelectorAll('.scenario-card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+        if (text.includes(q) || tags.includes(q)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Copy to clipboard
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.code-container').querySelector('pre code');
+      if (!codeBlock) return;
+      navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+        showToast();
+      });
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 2500);
+    }
+
+    // Dark / Light Theme Toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      document.getElementById('themeBtn').innerText = isLight ? '🌙 Dark Mode' : '🌓 Light/Dark';
+    }
+  </script>
+</body>
+</html>
